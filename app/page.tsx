@@ -2,39 +2,122 @@
 
 import { useState, useEffect } from "react";
 import {
-  FaBars, FaTimes, FaArrowRight, FaShieldAlt, FaBolt, FaThumbsUp, FaAward,
-  FaChevronDown, FaPhoneAlt, FaEnvelope, FaClock, FaStar,
-  FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram
+  FaBars,
+  FaTimes,
+  FaArrowRight,
+  FaShieldAlt,
+  FaBolt,
+  FaThumbsUp,
+  FaAward,
+  FaChevronDown,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+  FaStar,
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
 } from "react-icons/fa";
 
 const teamMembers = [
-  { name: "John Anderson", role: "CEO & Founder", img: "https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg" },
-  { name: "Sarah Mitchell", role: "Head Technician", img: "https://storage.googleapis.com/a1aa/image/976071dc-856e-4bdd-cea9-0d42c98ec036.jpg" },
-  { name: "David Chen", role: "Operations Manager", img: "https://storage.googleapis.com/a1aa/image/c85c660d-2881-479c-2fec-c8d30ac24f6b.jpg" },
-  { name: "Emily Roberts", role: "Customer Relations", img: "https://storage.googleapis.com/a1aa/image/d5e16eef-f02e-42db-2f3c-3a2c6d868863.jpg" },
+  {
+    name: "John Anderson",
+    role: "CEO & Founder",
+    img: "https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg",
+  },
+  {
+    name: "Sarah Mitchell",
+    role: "Head Technician",
+    img: "https://storage.googleapis.com/a1aa/image/976071dc-856e-4bdd-cea9-0d42c98ec036.jpg",
+  },
+  {
+    name: "David Chen",
+    role: "Operations Manager",
+    img: "https://storage.googleapis.com/a1aa/image/c85c660d-2881-479c-2fec-c8d30ac24f6b.jpg",
+  },
+  {
+    name: "Emily Roberts",
+    role: "Customer Relations",
+    img: "https://storage.googleapis.com/a1aa/image/d5e16eef-f02e-42db-2f3c-3a2c6d868863.jpg",
+  },
 ];
 
 const testimonials = [
-  { text: "Kucho transformed our home. We had a severe rodent problem and their team handled it professionally and discreetly. Highly recommend their services!", author: "James Davidson", title: "Homeowner", initials: "JD" },
-  { text: "Professional, punctual, and effective. Our restaurant passed health inspection after Kucho's commercial pest management. Worth every penny!", author: "Maria Patel", title: "Restaurant Owner", initials: "MP" },
-  { text: "The eco-friendly approach was exactly what we were looking for. They handled our termite issue without any harsh chemicals. Amazing results!", author: "Thomas Rivera", title: "Eco-Conscious Client", initials: "TR" },
+  {
+    text: "Kucho solved our restaurant's cockroach problem quickly and professionally. Highly recommended.",
+    author: "James Davidson",
+    title: "Restaurant Owner",
+    initials: "RS",
+  },
+  {
+    text: "Excellent service and knowledgeable technicians. Our termite issue was resolved completely.",
+    author: "Maria Patel",
+    title: "Homeowner",
+    initials: "PK",
+  },
+  {
+    text: "Professional team, fair pricing, and outstanding results from start to finish",
+    author: "Thomas Rivera",
+    title: "Business Owner",
+    initials: "BT",
+  },
 ];
 
 const faqs = [
-  { q: "What pest control methods do you use?", a: "We use a combination of eco-friendly chemical treatments, traps, exclusion techniques, and integrated pest management (IPM) strategies tailored to each specific infestation." },
-  { q: "Are your treatments safe for pets and children?", a: "Yes. We prioritize eco-conscious products that are safe for your family and pets. Our technicians will provide specific instructions on any necessary precautions." },
-  { q: "How often should pest control be done?", a: "For most homes, quarterly treatments suffice. However, commercial properties or severe infestations may require monthly or bi-monthly visits. We offer customized maintenance plans." },
-  { q: "Do you offer emergency pest control services?", a: "Absolutely. We offer 24/7 emergency services for urgent infestations. Call our hotline and we'll dispatch a technician immediately." },
-  { q: "What areas do you serve?", a: "We serve residential and commercial properties across the metropolitan area and surrounding suburbs. Contact us to check availability in your location." },
+  {
+    q: "What pest control methods do you use?",
+    a: "We use a combination of eco-friendly chemical treatments, traps, exclusion techniques, and integrated pest management (IPM) strategies tailored to each specific infestation.",
+  },
+  {
+    q: "Are your treatments safe for pets and children?",
+    a: "Yes. We prioritize eco-conscious products that are safe for your family and pets. Our technicians will provide specific instructions on any necessary precautions.",
+  },
+  {
+    q: "How often should pest control be done?",
+    a: "For most homes, quarterly treatments suffice. However, commercial properties or severe infestations may require monthly or bi-monthly visits. We offer customized maintenance plans.",
+  },
+  {
+    q: "Do you offer emergency pest control services?",
+    a: "Absolutely. We offer 24/7 emergency services for urgent infestations. Call our hotline and we'll dispatch a technician immediately.",
+  },
+  {
+    q: "What areas do you serve?",
+    a: "We serve residential and commercial properties across the metropolitan area and surrounding suburbs. Contact us to check availability in your location.",
+  },
 ];
 
 const services = [
-  { title: "Rodent Control", desc: "Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.", img: "https://storage.googleapis.com/a1aa/image/ea1f462a-dc58-4919-8e06-05a8ae49a931.jpg" },
-  { title: "Termite Treatment", desc: "Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.", img: "https://storage.googleapis.com/a1aa/image/72fc41dd-b3c2-4bd9-325b-9897b8052a28.jpg" },
-  { title: "Bed Bugs Control", desc: "Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.", img: "https://storage.googleapis.com/a1aa/image/96b40a84-794f-4fbf-b984-6cec0af8f268.jpg" },
-  { title: "Cockroach Control", desc: "Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.", img: "https://storage.googleapis.com/a1aa/image/ea1f462a-dc58-4919-8e06-05a8ae49a931.jpg" },
-  { title: "Mosquito Control", desc: "Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.", img: "https://storage.googleapis.com/a1aa/image/72fc41dd-b3c2-4bd9-325b-9897b8052a28.jpg" },
-  { title: "Ant Control", desc: "Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.", img: "https://storage.googleapis.com/a1aa/image/96b40a84-794f-4fbf-b984-6cec0af8f268.jpg" },
+  {
+    title: "Rodent Control",
+    desc: "Eliminate rats and mice before they damage property or contaminate food supplies.",
+    img: "https://storage.googleapis.com/a1aa/image/ea1f462a-dc58-4919-8e06-05a8ae49a931.jpg",
+  },
+  {
+    title: "Termite Treatment",
+    desc: "Protect wooden structures, furniture, and buildings from costly termite damage.",
+    img: "https://storage.googleapis.com/a1aa/image/72fc41dd-b3c2-4bd9-325b-9897b8052a28.jpg",
+  },
+  {
+    title: "Bed Bugs Control",
+    desc: "Effective treatments designed to eliminate bed bugs and prevent re-infestation.",
+    img: "https://storage.googleapis.com/a1aa/image/96b40a84-794f-4fbf-b984-6cec0af8f268.jpg",
+  },
+  {
+    title: "Cockroach Control",
+    desc: "Target infestations at the source and keep your property pest-free.",
+    img: "https://storage.googleapis.com/a1aa/image/ea1f462a-dc58-4919-8e06-05a8ae49a931.jpg",
+  },
+  {
+    title: "Mosquito Control",
+    desc: "Reduce mosquito populations around homes, gardens, and workplaces.",
+    img: "https://storage.googleapis.com/a1aa/image/72fc41dd-b3c2-4bd9-325b-9897b8052a28.jpg",
+  },
+  {
+    title: "Ant Control",
+    desc: "Remove active colonies and prevent recurring ant infestations.",
+    img: "https://storage.googleapis.com/a1aa/image/96b40a84-794f-4fbf-b984-6cec0af8f268.jpg",
+  },
 ];
 
 const heroSlides = [
@@ -72,14 +155,21 @@ export default function Home() {
           scrolled ? "border-b border-kucho-forest/10" : ""
         }`}
       >
-        <div className="bg-kucho-forest/95 backdrop-blur-sm">
+        <div className="bg-white backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <nav className="flex items-center justify-between h-[80px] text-white text-sm font-semibold">
+            <nav className="flex items-center justify-between h-[80px] py-10 text-white text-sm font-semibold">
               <a href="#" className="flex items-center gap-2 select-none">
-                <img src="/logo.png" alt="Kucho" className="h-10 w-auto" />
+                <img src="/logo.png" alt="Kucho" className="h-20 w-auto" />
               </a>
-              <div className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
-                {["Home", "About", "Services", "Process", "Testimonials", "Contact"].map((item) => (
+              {/* <div className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
+                {[
+                  "Home",
+                  "About",
+                  "Services",
+                  "Process",
+                  "Testimonials",
+                  "Contact",
+                ].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
@@ -88,11 +178,11 @@ export default function Home() {
                     {item === "Process" ? "How It Works" : item}
                   </a>
                 ))}
-              </div>
+              </div> */}
               <div className="flex items-center gap-4">
                 <a
                   href="#contact"
-                  className="hidden sm:inline-block bg-white text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
+                  className="hidden sm:inline-block bg-amber-300  text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
                 >
                   View Our Plans
                 </a>
@@ -113,7 +203,14 @@ export default function Home() {
           }`}
         >
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4 text-white text-sm font-medium">
-            {["Home", "About", "Services", "Process", "Testimonials", "Contact"].map((item) => (
+            {[
+              "Home",
+              "About",
+              "Services",
+              "Process",
+              "Testimonials",
+              "Contact",
+            ].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -126,7 +223,7 @@ export default function Home() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="bg-white text-black font-semibold text-sm rounded-full px-5 py-2.5 text-center mt-2 hover:bg-amber-400 hover:text-white transition-all"
+              className="bg-amber-200 text-black font-semibold text-sm rounded-full px-5 py-2.5 text-center mt-2 hover:bg-amber-400 hover:text-white transition-all"
             >
               View Our Plans
             </a>
@@ -135,7 +232,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-[80px]">
+      <section className="relative min-h-screen flex items-center pt-[80px] py-20">
         {heroSlides.map((src, i) => (
           <div
             key={src}
@@ -143,7 +240,11 @@ export default function Home() {
               i === heroIdx ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img src={src} alt="" className="w-full h-full object-cover brightness-[0.35]" />
+            <img
+              src={src}
+              alt=""
+              className="w-full h-full object-cover brightness-[0.35]"
+            />
           </div>
         ))}
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
@@ -152,17 +253,22 @@ export default function Home() {
               Protect What Matters Most
             </p>
             <h1 className="font-extrabold text-5xl md:text-6xl lg:text-7xl mb-5 leading-tight">
-              All Pest Solutions<br />for Your Peace of Mind
+              {/* All Pest Solutions */}
+              Professional Pest Control
+              <br />
+              for Your Peace of Mind
             </h1>
             <p className="text-base md:text-lg max-w-lg mb-8 leading-relaxed text-gray-200">
-              We safeguard your property from rodents, insects, and other pests using eco-friendly methods and experienced technicians. Trust Kucho to keep your space clean and pest-free.
+              Protect your home or business from termites, cockroaches, rodents,
+              bed bugs, mosquitoes, and more. Safe, effective pest control
+              solutions across Kathmandu, Lalitpur, and Bhaktapur.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
                 className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300"
               >
-                Schedule Service
+                Schedule Inspection
               </a>
               <a
                 href="#services"
@@ -175,34 +281,105 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 -mt-24 md:-mt-32">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {[
-            { label: "Rodents\nRemoved", value: "450+" },
-            { label: "Businesses\nServed", value: "450+" },
-            { label: "Eco\nTreatments", value: "450+" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="bg-kucho-light rounded-xl p-8 flex flex-col justify-between min-h-[190px] hover:border-kucho-forest border border-transparent transition-all duration-300 group cursor-pointer"
-            >
-              <div>
-                <p className="text-[15px] font-bold text-kucho-dark uppercase leading-tight mb-3 whitespace-pre-line">
-                  {stat.label}
-                </p>
-                <h2 className="text-4xl font-extrabold text-kucho-dark mb-1">{stat.value}</h2>
-              </div>
-              <div className="text-gray-400 text-2xl self-end group-hover:text-amber-400 transition-colors">
-                <FaArrowRight />
-              </div>
+      {/* Contact */}
+      <section
+        id="contact"
+        className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3">
+              Contact Us
+            </p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6">
+              Get Your Free Quote Today
+            </h2>
+            <p className="text-gray-500 mb-8 leading-relaxed">
+              Fill out the form and our team will contact you shortly with a
+              customized pest control solution.
+              {/* Fill out the form and our team will get back to you within 24
+              hours. We&apos;ll assess your pest problem and provide a tailored
+              solution. */}
+            </p>
+            <div className="space-y-6">
+              {[
+                {
+                  icon: FaPhoneAlt,
+                  title: "Phone",
+                  value: "9802317551",
+                },
+                {
+                  icon: FaEnvelope,
+                  title: "Email",
+                  value: "info@kucho.co",
+                },
+                {
+                  icon: FaClock,
+                  title: "Working Hours",
+                  value: "Sun – Fri: 8:00 AM – 6:00 PM",
+                },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
+                    <item.icon className="text-lg" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-black">{item.title}</h3>
+                    <p className="text-gray-500 text-sm">{item.value}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="bg-kucho-light rounded-xl p-8">
+            <h3 className="text-xl font-bold text-black mb-6">
+              Book Your Service
+            </h3>
+            <form>
+              {["Name", "Email", "Phone Number"].map((field) => (
+                <div key={field} className="mb-4">
+                  <label className="text-sm font-medium text-gray-700 mb-1 block">
+                    {field}
+                  </label>
+                  <input
+                    type={
+                      field === "Email"
+                        ? "email"
+                        : field === "Phone Number"
+                          ? "tel"
+                          : "text"
+                    }
+                    placeholder={`Your ${field}`}
+                    className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-forest border border-transparent focus:border-white bg-white"
+                  />
+                </div>
+              ))}
+              <div className="mb-4">
+                <label className="text-sm font-medium text-gray-700 mb-1 block">
+                  Message
+                </label>
+                <textarea
+                  placeholder="Tell us about your pest problem"
+                  rows={4}
+                  className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-forest border border-transparent focus:border-white resize-none bg-white"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-amber-400 text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
       {/* About */}
-      <section id="about" className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
+      <section
+        id="about"
+        className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28"
+      >
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="lg:w-1/2 w-full">
             <div className="flex flex-row gap-4">
@@ -213,9 +390,13 @@ export default function Home() {
               />
               <div className="flex flex-col w-1/2 gap-4">
                 <div className="bg-kucho-dark rounded-xl flex flex-col justify-center items-center p-6 h-1/2">
-                  <h2 className="text-5xl font-extrabold text-kucho-forest leading-none">25+</h2>
+                  <h2 className="text-5xl font-extrabold text-kucho-forest leading-none">
+                    25+
+                  </h2>
                   <p className="text-white font-semibold text-center mt-2 leading-tight">
-                    Years of<br />Experience
+                    Years of
+                    <br />
+                    Experience
                   </p>
                 </div>
                 <img
@@ -231,22 +412,36 @@ export default function Home() {
               About Kucho
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-              Your Trusted Pest<br />Experts
+              Kathmandu Valley's Trusted Pest Control Experts
+              {/* <br /> */}
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
-              Malesuada arcu dictumst vitae integer. Quam pharetra ultrices tortor eu velit vel. Sem ipsum auctor orci pellentesque placerat. Neque id ac nisl imperdiet tellus placerat venenatis habitant ullamcorper ornare est arcu elit pellentesque.
+              For over 4 years, Kucho has protected homes and businesses across
+              Kathmandu Valley from termites, rodents, cockroaches, mosquitoes,
+              bed bugs, and other common pests using safe and effective
+              treatment solutions.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
               {[
-                { icon: FaShieldAlt, title: "Residential Pest Control", desc: "Neque id ac nisl imperdiet tellus placerat." },
-                { icon: FaBolt, title: "Commercial Pest Mgmt", desc: "Neque id ac nisl imperdiet tellus placerat." },
+                {
+                  icon: FaShieldAlt,
+                  title: "Residential Pest Control",
+                  desc: "Protect your family and property from unwanted pests.",
+                },
+                {
+                  icon: FaBolt,
+                  title: "Commercial Pest Management",
+                  desc: "Customized solutions for offices, hotels, restaurants, and warehouses..",
+                },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
                     <item.icon className="text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-base text-black">{item.title}</h3>
+                    <h3 className="font-bold text-base text-black">
+                      {item.title}
+                    </h3>
                     <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
                   </div>
                 </div>
@@ -276,7 +471,9 @@ export default function Home() {
             </div>
             <div className="lg:col-span-7 flex flex-col justify-center">
               <p className="text-gray-500 mb-6">
-                Malesuada arcu dictumst vitae integer. Quam pharetra ultrices tortor eu velit vel. Sem ipsum auctor orci pellentesque placerat. Neque id ac nisl imperdiet tellus placerat.
+                From homes and apartments to restaurants and commercial
+                facilities, we deliver reliable pest control solutions tailored
+                to your needs.
               </p>
               <a
                 href="#contact"
@@ -300,8 +497,12 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-lg text-black mb-2">{svc.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">{svc.desc}</p>
+                  <h3 className="font-bold text-lg text-black mb-2">
+                    {svc.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    {svc.desc}
+                  </p>
                   <a
                     href="#contact"
                     className="font-semibold inline-flex items-center gap-2 text-sm hover:text-amber-400 transition-colors"
@@ -333,20 +534,35 @@ export default function Home() {
               Trusted Pest Control Professionals
             </h2>
             <p className="text-gray-500 mb-10 max-w-xl leading-relaxed">
-              Malesuada arcu dictumst vitae integer. Quam pharetra ultrices tortor eu velit vel. Sem ipsum auctor orci pellentesque placerat.
+              Property owners across Kathmandu Valley trust Kucho for safe,
+              reliable, and long-lasting pest management solutions.
             </p>
             <ul className="space-y-8 max-w-xl">
               {[
-                { icon: FaShieldAlt, title: "Comprehensive Protection", desc: "From inspection to elimination, we handle a wide range of pest problems with precision and care." },
-                { icon: FaThumbsUp, title: "Eco-Conscious Methods", desc: "We use safe, environmentally responsible products that protect you, your family, and the planet." },
-                { icon: FaAward, title: "Certified Experts", desc: "Our trained professionals follow industry-best practices and stay updated on the latest pest control technologies." },
+                {
+                  icon: FaShieldAlt,
+                  title: "Comprehensive Protection",
+                  desc: "Inspection, treatment, monitoring, and prevention for complete peace of mind.",
+                },
+                {
+                  icon: FaThumbsUp,
+                  title: "Eco-Conscious Methods",
+                  desc: "Safe treatments designed for families, pets, customers, and employees.",
+                },
+                {
+                  icon: FaAward,
+                  title: "Certified Experts",
+                  desc: "Experienced professionals trained in modern pest control practices.",
+                },
               ].map((item) => (
                 <li key={item.title} className="flex items-start gap-5">
                   <div className="flex items-center justify-center w-14 h-14 bg-kucho-dark rounded-xl flex-shrink-0">
                     <item.icon className="text-kucho-forest text-lg" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-black mb-1">{item.title}</h3>
+                    <h3 className="font-bold text-lg text-black mb-1">
+                      {item.title}
+                    </h3>
                     <p className="text-gray-500 text-sm">{item.desc}</p>
                   </div>
                 </li>
@@ -367,44 +583,89 @@ export default function Home() {
               Real Cases — Real Results
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Malesuada arcu dictum vitae integer. Quam pharetra ultricies tortor eu velit vel. Sem ipsum auctor orci pellentesque placerat.
+              See how Kucho helps homes and businesses eliminate infestations
+              and stay protected year-round.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-6">
               <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img src="https://storage.googleapis.com/a1aa/image/ad7999d0-32c7-4950-ca1b-6adabdd7c21a.jpg" alt="" className="w-full h-auto" />
+                <img
+                  src="https://storage.googleapis.com/a1aa/image/ad7999d0-32c7-4950-ca1b-6adabdd7c21a.jpg"
+                  alt=""
+                  className="w-full h-auto"
+                />
               </div>
               <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">Residential</p>
-                <h3 className="font-bold text-xl text-black mb-2">Rat Control In Basement</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
+                <p className="text-sm uppercase font-semibold mb-1">
+                  Residential
+                </p>
+                <h3 className="font-bold text-xl text-black mb-2">
+                  Rodent Control for Family Home
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Successfully eliminated rodent activity and sealed key entry
+                  points.
+                </p>
               </div>
               <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img src="https://storage.googleapis.com/a1aa/image/efc83f1c-970b-438e-2925-ae784276df3b.jpg" alt="" className="w-full h-auto" />
+                <img
+                  src="https://storage.googleapis.com/a1aa/image/efc83f1c-970b-438e-2925-ae784276df3b.jpg"
+                  alt=""
+                  className="w-full h-auto"
+                />
               </div>
               <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">Industrial</p>
-                <h3 className="font-bold text-xl text-black mb-2">Termite Treatment For Factory</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
+                <p className="text-sm uppercase font-semibold mb-1">
+                  Industrial
+                </p>
+                <h3 className="font-bold text-xl text-black mb-2">
+                  Termite Protection for Warehouse
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Prevented termite damage to valuable inventory and wooden
+                  structures.
+                </p>
               </div>
             </div>
             <div className="space-y-6">
               <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">Commercial</p>
-                <h3 className="font-bold text-xl text-black mb-2">Cockroach Removal In Café</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
+                <p className="text-sm uppercase font-semibold mb-1">
+                  Commercial
+                </p>
+                <h3 className="font-bold text-xl text-black mb-2">
+                  Cockroach Treatment for Restaurant
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Removed infestation sources and improved hygiene compliance
+                  standards
+                </p>
               </div>
               <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img src="https://storage.googleapis.com/a1aa/image/9f2b6281-a214-4e40-064b-61417c94935c.jpg" alt="" className="w-full h-auto" />
+                <img
+                  src="https://storage.googleapis.com/a1aa/image/9f2b6281-a214-4e40-064b-61417c94935c.jpg"
+                  alt=""
+                  className="w-full h-auto"
+                />
               </div>
               <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">Residential</p>
-                <h3 className="font-bold text-xl text-black mb-2">Mosquito Fogging In Yard</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
+                <p className="text-sm uppercase font-semibold mb-1">
+                  Residential
+                </p>
+                <h3 className="font-bold text-xl text-black mb-2">
+                  Mosquito Reduction Program
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Significantly reduced mosquito activity around outdoor living
+                  spaces.
+                </p>
               </div>
               <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img src="https://storage.googleapis.com/a1aa/image/df6dfd81-5f7c-456d-2ac1-dc271b649380.jpg" alt="" className="w-full h-auto" />
+                <img
+                  src="https://storage.googleapis.com/a1aa/image/df6dfd81-5f7c-456d-2ac1-dc271b649380.jpg"
+                  alt=""
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>
@@ -417,9 +678,12 @@ export default function Home() {
           <p className="text-sm font-semibold uppercase tracking-widest mb-2">
             Our Team
           </p>
-          <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">Meet The Experts</h2>
+          <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">
+            Meet The Experts
+          </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            Our certified professionals are dedicated to providing the highest quality pest control services.
+            Our certified professionals are dedicated to providing the highest
+            quality pest control services.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -437,7 +701,9 @@ export default function Home() {
               </div>
               <div className="p-5 text-center">
                 <h3 className="font-bold text-black text-lg">{member.name}</h3>
-                <p className="text-gray-500 text-sm font-medium">{member.role}</p>
+                <p className="text-gray-500 text-sm font-medium">
+                  {member.role}
+                </p>
               </div>
             </div>
           ))}
@@ -466,7 +732,9 @@ export default function Home() {
                     <FaStar key={i} />
                   ))}
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-6 italic">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-gray-600 leading-relaxed mb-6 italic">
+                  &ldquo;{t.text}&rdquo;
+                </p>
                 <div className="w-16 h-16 rounded-full bg-kucho-light mx-auto mb-3 flex items-center justify-center text-kucho-forest text-2xl font-bold">
                   {t.initials}
                 </div>
@@ -490,7 +758,10 @@ export default function Home() {
         </div>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+            <div
+              key={i}
+              className="border border-gray-200 rounded-xl overflow-hidden"
+            >
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex items-center justify-between p-5 text-left font-semibold text-black hover:bg-gray-50 transition-colors"
@@ -523,12 +794,14 @@ export default function Home() {
                 Get Started Today
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
-                Protect Your Space with Us
+                Protect Your Property with Kucho
               </h2>
             </div>
             <div className="lg:col-span-7">
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Don&apos;t let pests take over. Trust Kucho&apos;s professional pest control services to restore comfort, safety, and confidence to your property.
+                Don&apos;t let pests damage your property or disrupt your
+                business. Trust Kathmandu Valley's pest control specialists for
+                effective, long-lasting protection.
               </p>
               <a
                 href="#contact"
@@ -541,102 +814,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-3">
-              Contact Us
-            </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6">
-              Get Your Free Quote Today
-            </h2>
-            <p className="text-gray-500 mb-8 leading-relaxed">
-              Fill out the form and our team will get back to you within 24 hours. We&apos;ll assess your pest problem and provide a tailored solution.
-            </p>
-            <div className="space-y-6">
-              {[
-                { icon: FaPhoneAlt, title: "Phone", value: "+1 (333) 000-0000" },
-                { icon: FaEnvelope, title: "Email", value: "info@kuchopest.com" },
-                { icon: FaClock, title: "Working Hours", value: "Mon - Fri: 8:00 - 16:00" },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
-                    <item.icon className="text-lg" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-black">{item.title}</h3>
-                    <p className="text-gray-500 text-sm">{item.value}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="bg-kucho-light rounded-xl p-8">
-            <h3 className="text-xl font-bold text-black mb-6">Book Your Service</h3>
-            <form>
-              {["Name", "Email", "Phone Number"].map((field) => (
-                <div key={field} className="mb-4">
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">{field}</label>
-                  <input
-                    type={field === "Email" ? "email" : field === "Phone Number" ? "tel" : "text"}
-                    placeholder={`Your ${field}`}
-                    className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-forest border border-transparent focus:border-white bg-white"
-                  />
-                </div>
-              ))}
-              <div className="mb-4">
-                <label className="text-sm font-medium text-gray-700 mb-1 block">Message</label>
-                <textarea
-                  placeholder="Tell us about your pest problem"
-                  rows={4}
-                  className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-forest border border-transparent focus:border-white resize-none bg-white"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-amber-400 text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-kucho-forest pt-16 pb-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col md:flex-row gap-10 md:gap-20">
             <div className="md:w-1/2">
-              <a href="#" className="text-3xl font-extrabold text-white flex items-center gap-1 mb-6">
+              <a
+                href="#"
+                className="text-3xl font-extrabold text-white flex items-center gap-1 mb-6"
+              >
                 <span className="text-emerald-500">KU</span>CHO
               </a>
               <p className="text-white text-sm leading-relaxed max-w-sm">
-                Feel free to call us in working hours Mon - Fri (8:00 - 16:00). Our team will be happy to help answer your queries.
+                Feel free to contact us during business hours. Our team is ready
+                to help protect your home or business from pests.
               </p>
             </div>
             <div className="md:w-1/2 flex flex-col gap-4 md:items-end">
               <div className="flex gap-3">
-                {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:bg-amber-400 transition-colors"
-                  >
-                    <Icon />
-                  </a>
-                ))}
+                {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map(
+                  (Icon, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:bg-amber-400 transition-colors"
+                    >
+                      <Icon />
+                    </a>
+                  ),
+                )}
               </div>
               <p className="flex items-center gap-2 text-white text-sm">
-                <FaPhoneAlt className="text-black" /> +1 (333) 000-0000
+                <FaPhoneAlt className="text-black" /> 9802317551
               </p>
             </div>
           </div>
           <div className="border-t border-white/30 mt-10 pt-6 flex flex-col sm:flex-row gap-2 justify-center text-center text-xs text-white">
-            <p>&copy; 2025 Kucho. All rights reserved.</p>
+            <p>&copy;2026 Kucho. All rights reserved.</p>
             <p className="hidden sm:block">|</p>
-            <p>Design by IDA</p>
+            <p>Designed by Infinity Digital Agency</p>
           </div>
         </div>
       </footer>
