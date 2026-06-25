@@ -673,7 +673,7 @@ export default function Home() {
       </section>
 
       {/* Team */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
+      {/* <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
         <div className="text-center mb-14">
           <p className="text-sm font-semibold uppercase tracking-widest mb-2">
             Our Team
@@ -708,7 +708,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <section id="testimonials" className="bg-kucho-forest py-20 md:py-28">
@@ -815,17 +815,17 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-kucho-forest pt-16 pb-6">
+      <footer className="bg-white pt-16 pb-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col md:flex-row gap-10 md:gap-20">
             <div className="md:w-1/2">
               <a
                 href="#"
-                className="text-3xl font-extrabold text-white flex items-center gap-1 mb-6"
+                className="text-3xl font-extrabold text-black flex items-center gap-1 mb-6"
               >
-                <span className="text-emerald-500">KU</span>CHO
+                <img src="/logo.png" alt="Kucho" className="h-20 w-auto" />
               </a>
-              <p className="text-white text-sm leading-relaxed max-w-sm">
+              <p className="text-black text-sm leading-relaxed max-w-sm">
                 Feel free to contact us during business hours. Our team is ready
                 to help protect your home or business from pests.
               </p>
@@ -837,19 +837,19 @@ export default function Home() {
                     <a
                       key={i}
                       href="#"
-                      className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:bg-amber-400 transition-colors"
+                      className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-black text-sm hover:bg-amber-400 transition-colors"
                     >
                       <Icon />
                     </a>
                   ),
                 )}
               </div>
-              <p className="flex items-center gap-2 text-white text-sm">
+              <p className="flex items-center gap-2 text-black text-sm">
                 <FaPhoneAlt className="text-black" /> 9802317551
               </p>
             </div>
           </div>
-          <div className="border-t border-white/30 mt-10 pt-6 flex flex-col sm:flex-row gap-2 justify-center text-center text-xs text-white">
+          <div className="border-t border-white/30 mt-10 pt-6 flex flex-col sm:flex-row gap-2 justify-center text-center text-xs text-black">
             <p>&copy;2026 Kucho. All rights reserved.</p>
             <p className="hidden sm:block">|</p>
             <p>Designed by Infinity Digital Agency</p>
