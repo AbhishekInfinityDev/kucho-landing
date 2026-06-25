@@ -10,6 +10,25 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-kucho-forest: #1dbac1;
+  --color-kucho-dark: #115e59;
+  --color-kucho-lime: #a3e635;
+  --color-kucho-lime-hover: #84cc16;
+  --color-kucho-light: #f0fdfa;
+  --color-kucho-charcoal: #18181b;
+  --color-kucho-muted: #4b5563;
+  --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
