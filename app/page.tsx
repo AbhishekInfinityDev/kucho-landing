@@ -69,21 +69,21 @@ export default function Home() {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "shadow-lg" : ""
+          scrolled ? "border-b border-kucho-forest/10" : ""
         }`}
       >
         <div className="bg-kucho-forest/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <nav className="flex items-center justify-between h-[80px] text-white text-sm font-semibold">
-              <a href="#" className="text-3xl font-extrabold flex items-center gap-1 select-none">
-                <span className="text-emerald-500">KU</span><span className="text-white">CHO</span>
+              <a href="#" className="flex items-center gap-2 select-none">
+                <img src="/logo.png" alt="Kucho" className="h-10 w-auto" />
               </a>
               <div className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
                 {["Home", "About", "Services", "Process", "Testimonials", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    className="hover:text-emerald-500 transition-colors"
+                    className="hover:text-amber-400 transition-colors"
                   >
                     {item === "Process" ? "How It Works" : item}
                   </a>
@@ -118,7 +118,7 @@ export default function Home() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-emerald-500 transition-colors py-2"
+                className="hover:text-amber-400 transition-colors py-2"
               >
                 {item === "Process" ? "How It Works" : item}
               </a>
@@ -160,7 +160,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300 shadow-lg"
+                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300"
               >
                 Schedule Service
               </a>
@@ -185,7 +185,7 @@ export default function Home() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="bg-kucho-light rounded-xl p-8 flex flex-col justify-between min-h-[190px] hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
+              className="bg-kucho-light rounded-xl p-8 flex flex-col justify-between min-h-[190px] hover:border-kucho-forest border border-transparent transition-all duration-300 group cursor-pointer"
             >
               <div>
                 <p className="text-[15px] font-bold text-kucho-dark uppercase leading-tight mb-3 whitespace-pre-line">
@@ -213,7 +213,7 @@ export default function Home() {
               />
               <div className="flex flex-col w-1/2 gap-4">
                 <div className="bg-kucho-dark rounded-xl flex flex-col justify-center items-center p-6 h-1/2">
-                  <h2 className="text-5xl font-extrabold text-emerald-500 leading-none">25+</h2>
+                  <h2 className="text-5xl font-extrabold text-kucho-forest leading-none">25+</h2>
                   <p className="text-white font-semibold text-center mt-2 leading-tight">
                     Years of<br />Experience
                   </p>
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
           </div>
           <div className="lg:w-1/2 w-full">
-            <p className="text-kucho-forest font-semibold text-xs uppercase tracking-widest mb-3">
+            <p className="font-semibold text-xs uppercase tracking-widest mb-3">
               About Kucho
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
             <a
               href="#contact"
-              className="inline-block bg-amber-400 font-bold text-white text-sm px-8 py-3 rounded-full hover:bg-amber-500 transition-colors shadow-md"
+              className="inline-block bg-amber-400 font-bold text-white text-sm px-8 py-3 rounded-full hover:bg-amber-500 transition-colors"
             >
               Contact Us
             </a>
@@ -267,7 +267,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
             <div className="lg:col-span-5">
-              <p className="text-sm font-semibold text-kucho-forest uppercase tracking-widest mb-3">
+              <p className="text-sm font-semibold uppercase tracking-widest mb-3">
                 Our Services
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
@@ -280,7 +280,7 @@ export default function Home() {
               </p>
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 text-white font-semibold text-sm rounded-full px-8 py-3 w-max hover:bg-amber-500 transition-colors shadow-md"
+                className="inline-block bg-amber-400 text-white font-semibold text-sm rounded-full px-8 py-3 w-max hover:bg-amber-500 transition-colors"
               >
                 Explore All Services
               </a>
@@ -290,7 +290,7 @@ export default function Home() {
             {services.map((svc) => (
               <div
                 key={svc.title}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-white rounded-xl overflow-hidden border border-kucho-forest/10 hover:border-kucho-forest transition-all duration-300 group"
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -304,7 +304,7 @@ export default function Home() {
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">{svc.desc}</p>
                   <a
                     href="#contact"
-                    className="font-semibold text-kucho-forest inline-flex items-center gap-2 text-sm hover:text-amber-400 transition-colors"
+                    className="font-semibold inline-flex items-center gap-2 text-sm hover:text-amber-400 transition-colors"
                   >
                     {svc.title} Service <FaArrowRight className="text-xs" />
                   </a>
@@ -322,11 +322,11 @@ export default function Home() {
             <img
               src="https://storage.googleapis.com/a1aa/image/ebe21c0f-7d18-440e-4b94-eb033e8661eb.jpg"
               alt=""
-              className="rounded-xl w-full h-[400px] md:h-[550px] object-cover shadow-lg"
+              className="rounded-xl w-full h-[400px] md:h-[550px] object-cover"
             />
           </div>
           <div className="w-full md:w-1/2">
-            <p className="text-kucho-forest text-xs font-semibold tracking-widest uppercase mb-3">
+            <p className="text-xs font-semibold tracking-widest uppercase mb-3">
               Why Choose Us
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
@@ -360,7 +360,7 @@ export default function Home() {
       <section id="process" className="bg-kucho-light py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-bold text-kucho-forest uppercase tracking-widest mb-2">
+            <p className="text-sm font-bold uppercase tracking-widest mb-2">
               Our Process
             </p>
             <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">
@@ -372,38 +372,38 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-6">
-              <div className="rounded-xl overflow-hidden shadow-sm">
+              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
                 <img src="https://storage.googleapis.com/a1aa/image/ad7999d0-32c7-4950-ca1b-6adabdd7c21a.jpg" alt="" className="w-full h-auto" />
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <p className="text-sm text-kucho-forest uppercase font-semibold mb-1">Residential</p>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-sm uppercase font-semibold mb-1">Residential</p>
                 <h3 className="font-bold text-xl text-black mb-2">Rat Control In Basement</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
               </div>
-              <div className="rounded-xl overflow-hidden shadow-sm">
+              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
                 <img src="https://storage.googleapis.com/a1aa/image/efc83f1c-970b-438e-2925-ae784276df3b.jpg" alt="" className="w-full h-auto" />
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <p className="text-sm text-kucho-forest uppercase font-semibold mb-1">Industrial</p>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-sm uppercase font-semibold mb-1">Industrial</p>
                 <h3 className="font-bold text-xl text-black mb-2">Termite Treatment For Factory</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
               </div>
             </div>
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <p className="text-sm text-kucho-forest uppercase font-semibold mb-1">Commercial</p>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-sm uppercase font-semibold mb-1">Commercial</p>
                 <h3 className="font-bold text-xl text-black mb-2">Cockroach Removal In Café</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
               </div>
-              <div className="rounded-xl overflow-hidden shadow-sm">
+              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
                 <img src="https://storage.googleapis.com/a1aa/image/9f2b6281-a214-4e40-064b-61417c94935c.jpg" alt="" className="w-full h-auto" />
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <p className="text-sm text-kucho-forest uppercase font-semibold mb-1">Residential</p>
+              <div className="bg-white rounded-xl p-6">
+                <p className="text-sm uppercase font-semibold mb-1">Residential</p>
                 <h3 className="font-bold text-xl text-black mb-2">Mosquito Fogging In Yard</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">Lectus eget velit mauris risus vel. Nec luctus sollicitudin tortor nibh quis pharetra lectus a. Sed et tellus tellus egestas purus nullam.</p>
               </div>
-              <div className="rounded-xl overflow-hidden shadow-sm">
+              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
                 <img src="https://storage.googleapis.com/a1aa/image/df6dfd81-5f7c-456d-2ac1-dc271b649380.jpg" alt="" className="w-full h-auto" />
               </div>
             </div>
@@ -414,7 +414,7 @@ export default function Home() {
       {/* Team */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
         <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-kucho-forest uppercase tracking-widest mb-2">
+          <p className="text-sm font-semibold uppercase tracking-widest mb-2">
             Our Team
           </p>
           <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">Meet The Experts</h2>
@@ -426,7 +426,7 @@ export default function Home() {
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group"
+              className="bg-white rounded-xl overflow-hidden border border-kucho-forest/10 hover:border-kucho-forest transition-all duration-300 group"
             >
               <div className="h-72 overflow-hidden">
                 <img
@@ -437,7 +437,7 @@ export default function Home() {
               </div>
               <div className="p-5 text-center">
                 <h3 className="font-bold text-black text-lg">{member.name}</h3>
-                <p className="text-kucho-forest text-sm font-medium">{member.role}</p>
+                <p className="text-gray-500 text-sm font-medium">{member.role}</p>
               </div>
             </div>
           ))}
@@ -448,7 +448,7 @@ export default function Home() {
       <section id="testimonials" className="bg-kucho-forest py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-emerald-500 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-white uppercase tracking-widest mb-2">
               Testimonials
             </p>
             <h2 className="font-extrabold text-4xl md:text-5xl text-white mb-4">
@@ -459,7 +459,7 @@ export default function Home() {
             {testimonials.map((t) => (
               <div
                 key={t.author}
-                className="bg-white rounded-xl p-8 md:p-10 text-center shadow-lg"
+                className="bg-white rounded-xl p-8 md:p-10 text-center"
               >
                 <div className="text-amber-400 text-2xl mb-4 flex justify-center gap-1">
                   {[...Array(5)].map((_, i) => (
@@ -481,7 +481,7 @@ export default function Home() {
       {/* FAQ */}
       <section className="max-w-3xl mx-auto px-6 sm:px-8 py-20 md:py-28">
         <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-kucho-forest uppercase tracking-widest mb-2">
+          <p className="text-sm font-semibold uppercase tracking-widest mb-2">
             FAQ
           </p>
           <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">
@@ -532,7 +532,7 @@ export default function Home() {
               </p>
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 text-white font-bold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors shadow-md"
+                className="inline-block bg-amber-400 text-white font-bold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors"
               >
                 Schedule a Free Inspection
               </a>
@@ -545,7 +545,7 @@ export default function Home() {
       <section id="contact" className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-sm font-semibold text-kucho-forest uppercase tracking-widest mb-3">
+            <p className="text-sm font-semibold uppercase tracking-widest mb-3">
               Contact Us
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6">
@@ -572,7 +572,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="bg-kucho-light rounded-xl p-8 shadow-sm">
+          <div className="bg-kucho-light rounded-xl p-8">
             <h3 className="text-xl font-bold text-black mb-6">Book Your Service</h3>
             <form>
               {["Name", "Email", "Phone Number"].map((field) => (
@@ -595,7 +595,7 @@ export default function Home() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-amber-400 text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition-colors shadow-md"
+                className="w-full bg-amber-400 text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition-colors"
               >
                 Send Message
               </button>
