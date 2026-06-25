@@ -6,7 +6,7 @@ import Image from "next/image";
 // SVG Icons as custom inline elements to maintain performance and avoid missing dependency issues
 const Icons = {
   Check: () => (
-    <svg className="w-5 h-5 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+    <svg className="w-5 h-5 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
     </svg>
   ),
@@ -21,17 +21,17 @@ const Icons = {
     </svg>
   ),
   Shield: () => (
-    <svg className="w-6 h-6 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-6 h-6 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
     </svg>
   ),
   Leaf: () => (
-    <svg className="w-6 h-6 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-6 h-6 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   ),
   Users: () => (
-    <svg className="w-6 h-6 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-6 h-6 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>
   ),
@@ -46,17 +46,17 @@ const Icons = {
     </svg>
   ),
   Phone: () => (
-    <svg className="w-5 h-5 mr-2 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5 mr-2 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
     </svg>
   ),
   Mail: () => (
-    <svg className="w-5 h-5 mr-2 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5 mr-2 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
     </svg>
   ),
   Clock: () => (
-    <svg className="w-5 h-5 mr-2 text-kucho-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5 mr-2 text-kucho-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   ),
@@ -128,26 +128,26 @@ export default function KuchoLanding() {
   };
 
   return (
-    <div className="bg-kucho-light text-zinc-900 font-sans min-h-screen selection:bg-kucho-lime selection:text-kucho-dark">
+    <div className="bg-kucho-light text-zinc-900 font-sans min-h-screen selection:bg-kucho-forest selection:text-kucho-dark">
       {/* 1. HEADER / NAVBAR */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-kucho-forest/10 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 group">
-            <span className="w-10 h-10 rounded-xl bg-kucho-forest flex items-center justify-center text-kucho-lime font-bold text-xl transition-all duration-300 group-hover:scale-105">
+            <span className="w-10 h-10 rounded-xl bg-kucho-forest flex items-center justify-center text-kucho-forest font-bold text-xl transition-all duration-300 group-hover:scale-105">
               k
             </span>
-            <span className="text-2xl font-bold tracking-tight text-kucho-forest">
-              kucho<span className="text-kucho-lime">.</span>
+            <span className="text-2xl font-bold tracking-tight text-black">
+              kucho<span className="text-kucho-forest">.</span>
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-kucho-forest/80">
-            <a href="#home" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-lime after:transition-all hover:after:w-full">Home</a>
-            <a href="#about" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-lime after:transition-all hover:after:w-full">About Us</a>
-            <a href="#services" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-lime after:transition-all hover:after:w-full">Services</a>
-            <a href="#pests" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-lime after:transition-all hover:after:w-full">Pests</a>
-            <a href="#pricing" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-lime after:transition-all hover:after:w-full">Pricing</a>
-            <a href="#testimonials" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-lime after:transition-all hover:after:w-full">Testimonials</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-black/80">
+            <a href="#home" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-forest after:transition-all hover:after:w-full">Home</a>
+            <a href="#about" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-forest after:transition-all hover:after:w-full">About Us</a>
+            <a href="#services" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-forest after:transition-all hover:after:w-full">Services</a>
+            <a href="#pests" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-forest after:transition-all hover:after:w-full">Pests</a>
+            <a href="#pricing" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-forest after:transition-all hover:after:w-full">Pricing</a>
+            <a href="#testimonials" className="hover:text-kucho-forest transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-kucho-forest after:transition-all hover:after:w-full">Testimonials</a>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
@@ -161,7 +161,7 @@ export default function KuchoLanding() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-kucho-forest hover:text-kucho-lime focus:outline-none"
+            className="md:hidden p-2 text-kucho-forest hover:text-kucho-forest focus:outline-none"
             aria-label="Toggle navigation menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +177,7 @@ export default function KuchoLanding() {
         {/* Mobile menu panel */}
         {mobileMenuOpen && (
           <div className="md:hidden px-6 py-4 bg-white border-t border-kucho-forest/10 absolute top-20 left-0 w-full animate-fade-in-up">
-            <nav className="flex flex-col gap-4 font-semibold text-kucho-forest/80">
+            <nav className="flex flex-col gap-4 font-semibold text-black/80">
               <a href="#home" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-kucho-forest transition-colors">Home</a>
               <a href="#about" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-kucho-forest transition-colors">About Us</a>
               <a href="#services" onClick={() => setMobileMenuOpen(false)} className="py-2 hover:text-kucho-forest transition-colors">Services</a>
@@ -200,13 +200,13 @@ export default function KuchoLanding() {
       <section id="home" className="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-gradient-to-b from-white via-kucho-light to-white">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 flex flex-col items-start text-left z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-kucho-forest/5 border border-kucho-forest/10 rounded-full text-kucho-forest text-xs font-bold uppercase tracking-wider mb-6 animate-fade-in-up">
-              <span className="w-2 h-2 rounded-full bg-kucho-lime animate-ping"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-kucho-forest/5 border border-kucho-forest/10 rounded-full text-black text-xs font-bold uppercase tracking-wider mb-6 animate-fade-in-up">
+              <span className="w-2 h-2 rounded-full bg-kucho-forest animate-ping"></span>
               #1 Pest Control Company
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-kucho-forest mb-6">
-              Protecting homes with <span className="text-transparent bg-clip-text bg-gradient-to-r from-kucho-forest via-emerald-800 to-kucho-lime">expert pest control</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-black mb-6">
+              Protecting homes with expert pest control
             </h1>
 
             <p className="text-lg text-zinc-600 mb-8 max-w-xl leading-relaxed">
@@ -216,7 +216,7 @@ export default function KuchoLanding() {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-10">
               <a
                 href="#book"
-                className="px-8 h-14 flex items-center justify-center font-bold bg-kucho-lime text-kucho-dark rounded-full transition-all duration-300 hover:bg-kucho-lime-hover hover:scale-105 active:scale-95"
+                className="px-8 h-14 flex items-center justify-center font-bold bg-kucho-forest text-kucho-dark rounded-full transition-all duration-300 hover:bg-kucho-forest hover:scale-105 active:scale-95"
               >
                 Schedule Inspection
               </a>
@@ -230,20 +230,20 @@ export default function KuchoLanding() {
 
             <div className="grid grid-cols-2 gap-6 pt-6 border-t border-kucho-forest/10 w-full max-w-lg">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-kucho-lime/20 flex items-center justify-center font-bold text-kucho-forest">
+                <div className="w-10 h-10 rounded-full bg-kucho-forest/20 flex items-center justify-center font-bold text-black">
                   10k+
                 </div>
                 <div>
-                  <div className="text-sm font-extrabold text-kucho-forest">Happy Clients</div>
+                  <div className="text-sm font-extrabold text-black">Happy Clients</div>
                   <div className="text-xs text-zinc-500 font-medium">5-Star Verified Reviews</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-kucho-lime/20 flex items-center justify-center font-bold text-kucho-forest">
+                <div className="w-10 h-10 rounded-full bg-kucho-forest/20 flex items-center justify-center font-bold text-black">
                   100%
                 </div>
                 <div>
-                  <div className="text-sm font-extrabold text-kucho-forest">Satisfaction</div>
+                  <div className="text-sm font-extrabold text-black">Satisfaction</div>
                   <div className="text-xs text-zinc-500 font-medium">Money-Back Guarantee</div>
                 </div>
               </div>
@@ -265,7 +265,7 @@ export default function KuchoLanding() {
                 ★
               </div>
               <div>
-                <p className="text-sm font-bold text-kucho-forest">Award-Winning Service</p>
+                <p className="text-sm font-bold text-black">Award-Winning Service</p>
                 <p className="text-xs text-zinc-500 font-medium">Voted Best Pest Exterminators 2026</p>
               </div>
             </div>
@@ -327,10 +327,10 @@ export default function KuchoLanding() {
           </div>
 
           <div className="lg:col-span-6 flex flex-col items-start text-left">
-            <div className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+            <div className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               ABOUT OUR EXPERT TEAM
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6">
               Dedicated to protecting your home from invasive pests.
             </h2>
             <p className="text-zinc-600 mb-6 leading-relaxed">
@@ -339,29 +339,29 @@ export default function KuchoLanding() {
 
             <div className="flex flex-col gap-4 mb-8 w-full">
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-kucho-lime/20 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-kucho-forest/20 flex items-center justify-center shrink-0 mt-0.5">
                   <Icons.Check />
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-kucho-forest text-sm">Certified & Licensed Technicians</h4>
+                  <h4 className="font-extrabold text-black text-sm">Certified & Licensed Technicians</h4>
                   <p className="text-xs text-zinc-500 font-medium">All technicians undergo rigorous training and hold national certifications.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-kucho-lime/20 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-kucho-forest/20 flex items-center justify-center shrink-0 mt-0.5">
                   <Icons.Check />
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-kucho-forest text-sm">Eco-Friendly & Safe Spray Formulas</h4>
+                  <h4 className="font-extrabold text-black text-sm">Eco-Friendly & Safe Spray Formulas</h4>
                   <p className="text-xs text-zinc-500 font-medium">Safe for kids and pets, targeting pests selectively with zero harsh residues.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-6 h-6 rounded-full bg-kucho-lime/20 flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-6 h-6 rounded-full bg-kucho-forest/20 flex items-center justify-center shrink-0 mt-0.5">
                   <Icons.Check />
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-kucho-forest text-sm">24-Hour Emergency Dispatch</h4>
+                  <h4 className="font-extrabold text-black text-sm">24-Hour Emergency Dispatch</h4>
                   <p className="text-xs text-zinc-500 font-medium">Struggling with a late-night infestation? We offer prompt 24/7 priority support.</p>
                 </div>
               </div>
@@ -381,10 +381,10 @@ export default function KuchoLanding() {
       <section id="services" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               OUR SERVICE OFFERINGS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight">
               Safe & reliable pest control services and solutions
             </h2>
             <p className="text-sm text-zinc-500 font-medium mt-4">
@@ -395,14 +395,14 @@ export default function KuchoLanding() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="bg-kucho-light rounded-3xl p-8 border border-kucho-forest/5 flex flex-col items-start text-left transition-all duration-300 hover:-translate-y-2 group">
-              <div className="w-14 h-14 bg-kucho-forest rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:bg-kucho-lime group-hover:text-kucho-dark">
+              <div className="w-14 h-14 bg-kucho-forest rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:bg-kucho-forest group-hover:text-kucho-dark">
                 🏠
               </div>
-              <h3 className="text-xl font-extrabold text-kucho-forest mb-4">Residential Protection</h3>
+              <h3 className="text-xl font-extrabold text-black mb-4">Residential Protection</h3>
               <p className="text-sm text-zinc-500 leading-relaxed mb-6">
                 Protect your home, family, and garden from common pests. We implement a durable barrier to keep critters outdoors.
               </p>
-              <ul className="text-xs font-semibold text-kucho-forest/90 space-y-3 mb-8 w-full">
+              <ul className="text-xs font-semibold text-black/90 space-y-3 mb-8 w-full">
                 <li className="flex items-center gap-2">
                   <Icons.Check /> Full Exterior Perimeter Spray
                 </li>
@@ -413,21 +413,21 @@ export default function KuchoLanding() {
                   <Icons.Check /> Indoor Safe Crack Treatments
                 </li>
               </ul>
-              <a href="#book" className="mt-auto inline-flex items-center font-bold text-kucho-forest hover:text-kucho-lime-hover text-sm group">
+              <a href="#book" className="mt-auto inline-flex items-center font-bold text-black hover:text-black text-sm group">
                 Request Service <Icons.ChevronRight />
               </a>
             </div>
 
             {/* Card 2 */}
             <div className="bg-kucho-light rounded-3xl p-8 border border-kucho-forest/5 flex flex-col items-start text-left transition-all duration-300 hover:-translate-y-2 group">
-              <div className="w-14 h-14 bg-kucho-forest rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:bg-kucho-lime group-hover:text-kucho-dark">
+              <div className="w-14 h-14 bg-kucho-forest rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:bg-kucho-forest group-hover:text-kucho-dark">
                 🏢
               </div>
-              <h3 className="text-xl font-extrabold text-kucho-forest mb-4">Commercial Solutions</h3>
+              <h3 className="text-xl font-extrabold text-black mb-4">Commercial Solutions</h3>
               <p className="text-sm text-zinc-500 leading-relaxed mb-6">
                 Keep your business code-compliant and sanitary. Tailored scheduling to prevent business hours disruption.
               </p>
-              <ul className="text-xs font-semibold text-kucho-forest/90 space-y-3 mb-8 w-full">
+              <ul className="text-xs font-semibold text-black/90 space-y-3 mb-8 w-full">
                 <li className="flex items-center gap-2">
                   <Icons.Check /> Full Compliance Documentation
                 </li>
@@ -438,21 +438,21 @@ export default function KuchoLanding() {
                   <Icons.Check /> Multi-Unit Custom Programs
                 </li>
               </ul>
-              <a href="#book" className="mt-auto inline-flex items-center font-bold text-kucho-forest hover:text-kucho-lime-hover text-sm group">
+              <a href="#book" className="mt-auto inline-flex items-center font-bold text-black hover:text-black text-sm group">
                 Request Service <Icons.ChevronRight />
               </a>
             </div>
 
             {/* Card 3 */}
             <div className="bg-kucho-light rounded-3xl p-8 border border-kucho-forest/5 flex flex-col items-start text-left transition-all duration-300 hover:-translate-y-2 group">
-              <div className="w-14 h-14 bg-kucho-forest rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:bg-kucho-lime group-hover:text-kucho-dark">
+              <div className="w-14 h-14 bg-kucho-forest rounded-2xl flex items-center justify-center text-white mb-6 transition-all duration-300 group-hover:bg-kucho-forest group-hover:text-kucho-dark">
                 🚨
               </div>
-              <h3 className="text-xl font-extrabold text-kucho-forest mb-4">Emergency Extermination</h3>
+              <h3 className="text-xl font-extrabold text-black mb-4">Emergency Extermination</h3>
               <p className="text-sm text-zinc-500 leading-relaxed mb-6">
                 Urgent, heavy infestations. Rapid dispatch to evaluate, treat, and quarantine complex structural pest outbreaks.
               </p>
-              <ul className="text-xs font-semibold text-kucho-forest/90 space-y-3 mb-8 w-full">
+              <ul className="text-xs font-semibold text-black/90 space-y-3 mb-8 w-full">
                 <li className="flex items-center gap-2">
                   <Icons.Check /> Under 2-Hour Technician Arrival
                 </li>
@@ -463,7 +463,7 @@ export default function KuchoLanding() {
                   <Icons.Check /> Guaranteed Instant Knockdown
                 </li>
               </ul>
-              <a href="#book" className="mt-auto inline-flex items-center font-bold text-kucho-forest hover:text-kucho-lime-hover text-sm group">
+              <a href="#book" className="mt-auto inline-flex items-center font-bold text-black hover:text-black text-sm group">
                 Request Service <Icons.ChevronRight />
               </a>
             </div>
@@ -475,10 +475,10 @@ export default function KuchoLanding() {
       <section className="py-24 bg-gradient-to-b from-white to-kucho-light">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 flex flex-col items-start text-left">
-            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               WHY CHOOSE KUCHO
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6">
               Affordable, unbeatable, & certified pest control.
             </h2>
             <p className="text-zinc-600 mb-8 max-w-xl">
@@ -487,22 +487,22 @@ export default function KuchoLanding() {
 
             <div className="grid sm:grid-cols-2 gap-6 w-full mb-8">
               <div className="bg-white p-5 rounded-2xl border border-kucho-forest/5">
-                <h4 className="font-extrabold text-kucho-forest mb-2">✓ No Hidden Costs</h4>
+                <h4 className="font-extrabold text-black mb-2">✓ No Hidden Costs</h4>
                 <p className="text-xs text-zinc-500 font-medium">Flat estimates with clear features itemized. What you see is what you pay.</p>
               </div>
               <div className="bg-white p-5 rounded-2xl border border-kucho-forest/5">
-                <h4 className="font-extrabold text-kucho-forest mb-2">✓ Prompt & Reliable</h4>
+                <h4 className="font-extrabold text-black mb-2">✓ Prompt & Reliable</h4>
                 <p className="text-xs text-zinc-500 font-medium">We stick strictly to scheduled hours. If we show up late, your service fee is discounted.</p>
               </div>
             </div>
 
             <div className="bg-kucho-forest text-white p-6 rounded-2xl flex items-center gap-4 w-full max-w-md">
-              <div className="w-12 h-12 bg-kucho-lime text-kucho-dark rounded-xl flex items-center justify-center font-extrabold text-xl">
+              <div className="w-12 h-12 bg-kucho-forest text-kucho-dark rounded-xl flex items-center justify-center font-extrabold text-xl">
                 25k
               </div>
               <div>
                 <p className="text-sm font-bold text-white">Active Homes Protected</p>
-                <p className="text-xs text-kucho-lime font-medium">Eliminating local infestations every day.</p>
+                <p className="text-xs text-black font-medium">Eliminating local infestations every day.</p>
               </div>
             </div>
           </div>
@@ -521,12 +521,12 @@ export default function KuchoLanding() {
 
       {/* 7. CORE FEATURES (DARK GREEN BACKGROUND) */}
       <section className="py-24 bg-kucho-forest text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-kucho-lime/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-kucho-forest/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-kucho-lime/20 rounded-md text-kucho-lime text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/20 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               PREMIUM STANDARDS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -535,8 +535,8 @@ export default function KuchoLanding() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 text-left">
-            <div className="bg-kucho-dark/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-kucho-lime/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-kucho-lime/10 flex items-center justify-center mb-6">
+            <div className="bg-kucho-dark/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-kucho-forest/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-kucho-forest/10 flex items-center justify-center mb-6">
                 <Icons.Leaf />
               </div>
               <h3 className="text-lg font-bold mb-3 text-white">Eco-Friendly Pesticides</h3>
@@ -545,8 +545,8 @@ export default function KuchoLanding() {
               </p>
             </div>
 
-            <div className="bg-kucho-dark/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-kucho-lime/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-kucho-lime/10 flex items-center justify-center mb-6">
+            <div className="bg-kucho-dark/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-kucho-forest/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-kucho-forest/10 flex items-center justify-center mb-6">
                 <Icons.Users />
               </div>
               <h3 className="text-lg font-bold mb-3 text-white">Certified Professionals</h3>
@@ -555,8 +555,8 @@ export default function KuchoLanding() {
               </p>
             </div>
 
-            <div className="bg-kucho-dark/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-kucho-lime/30 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-kucho-lime/10 flex items-center justify-center mb-6">
+            <div className="bg-kucho-dark/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-kucho-forest/30 transition-all duration-300">
+              <div className="w-12 h-12 rounded-xl bg-kucho-forest/10 flex items-center justify-center mb-6">
                 <Icons.Shield />
               </div>
               <h3 className="text-lg font-bold mb-3 text-white">100% Satisfaction Shield</h3>
@@ -572,10 +572,10 @@ export default function KuchoLanding() {
       <section id="pests" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               PEST SPECTRUM
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-4">
               Protecting your home from all key pest groups
             </h2>
             <p className="text-sm text-zinc-500 font-medium">
@@ -594,18 +594,18 @@ export default function KuchoLanding() {
                   <button
                     key={key}
                     onClick={() => setActivePest(key)}
-                    className={`flex items-center justify-between p-6 rounded-2xl border text-left transition-all duration-300 focus:outline-none ${ isActive ? "bg-kucho-forest border-kucho-forest text-white" : "bg-kucho-light border-kucho-forest/10 text-kucho-forest hover:bg-white hover:border-kucho-lime" }`}
+                    className={`flex items-center justify-between p-6 rounded-2xl border text-left transition-all duration-300 focus:outline-none ${ isActive ? "bg-kucho-forest border-kucho-forest text-white" : "bg-kucho-light border-kucho-forest/10 text-kucho-forest hover:bg-white hover:border-kucho-forest" }`}
                   >
                     <div className="flex items-center gap-4">
                       <span className="text-3xl select-none">{pest.icon}</span>
                       <div>
                         <span className="font-extrabold text-base block">{pest.name}</span>
-                        <span className={`text-[10px] uppercase font-bold tracking-wider ${isActive ? "text-kucho-lime" : "text-zinc-400"}`}>
+                        <span className={`text-[10px] uppercase font-bold tracking-wider ${isActive ? "text-kucho-forest" : "text-zinc-400"}`}>
                           Danger: {pest.dangerLevel}
                         </span>
                       </div>
                     </div>
-                    <span className={`w-8 h-8 rounded-full flex items-center justify-center ${isActive ? "bg-kucho-lime text-kucho-dark" : "bg-kucho-forest/5"}`}>
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center ${isActive ? "bg-kucho-forest text-kucho-dark" : "bg-kucho-forest/5"}`}>
                       ➔
                     </span>
                   </button>
@@ -618,7 +618,7 @@ export default function KuchoLanding() {
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-5xl select-none">{pestsData[activePest as keyof typeof pestsData].icon}</span>
                 <div>
-                  <h3 className="text-2xl font-extrabold text-kucho-forest">
+                  <h3 className="text-2xl font-extrabold text-black">
                     {pestsData[activePest as keyof typeof pestsData].title}
                   </h3>
                   <span className="inline-block px-3 py-1 bg-rose-500/10 text-rose-600 text-xs font-bold rounded-full mt-1">
@@ -636,7 +636,7 @@ export default function KuchoLanding() {
                   <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest block mb-1">
                     Average Treatment Duration
                   </span>
-                  <span className="font-extrabold text-kucho-forest text-lg">
+                  <span className="font-extrabold text-black text-lg">
                     {pestsData[activePest as keyof typeof pestsData].treatmentTime}
                   </span>
                 </div>
@@ -644,7 +644,7 @@ export default function KuchoLanding() {
                   <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest block mb-1">
                     Extermination Guarantee
                   </span>
-                  <span className="font-extrabold text-kucho-forest text-lg">
+                  <span className="font-extrabold text-black text-lg">
                     6 Months Full Warranty
                   </span>
                 </div>
@@ -680,45 +680,45 @@ export default function KuchoLanding() {
                   <Icons.Star key={s} />
                 ))}
               </div>
-              <p className="text-[10px] font-bold text-kucho-forest">“Highly recommended pest company, quick response and professional.”</p>
+              <p className="text-[10px] font-bold text-black">“Highly recommended pest company, quick response and professional.”</p>
               <p className="text-[9px] text-zinc-400 mt-1 font-semibold">- Sarah K., Residential Owner</p>
             </div>
           </div>
 
           <div className="lg:col-span-7 text-left lg:order-1">
-            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               WORKFLOW STAGES
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight mb-8">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-8">
               Our Pest Control Process for Safe & Effective Results
             </h2>
 
             <div className="relative pl-8 border-l-2 border-kucho-forest/10 space-y-12">
               <div className="relative">
-                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-kucho-lime border-4 border-white flex items-center justify-center font-bold text-[10px] text-kucho-dark">
+                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-kucho-forest border-4 border-white flex items-center justify-center font-bold text-[10px] text-kucho-dark">
                   1
                 </span>
-                <h4 className="font-extrabold text-kucho-forest text-base mb-1">Complete Home Evaluation</h4>
+                <h4 className="font-extrabold text-black text-base mb-1">Complete Home Evaluation</h4>
                 <p className="text-sm text-zinc-500 leading-relaxed">
                   We perform a full inspection of the attic, foundation, siding, and sub-structure to map pest routes.
                 </p>
               </div>
 
               <div className="relative">
-                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-kucho-lime border-4 border-white flex items-center justify-center font-bold text-[10px] text-kucho-dark">
+                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-kucho-forest border-4 border-white flex items-center justify-center font-bold text-[10px] text-kucho-dark">
                   2
                 </span>
-                <h4 className="font-extrabold text-kucho-forest text-base mb-1">Custom Targeted Treatment</h4>
+                <h4 className="font-extrabold text-black text-base mb-1">Custom Targeted Treatment</h4>
                 <p className="text-sm text-zinc-500 leading-relaxed">
                   Using organic liquid barrier sprays, gel baits, and dust treatment in crevices to neutralize colonies.
                 </p>
               </div>
 
               <div className="relative">
-                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-kucho-lime border-4 border-white flex items-center justify-center font-bold text-[10px] text-kucho-dark">
+                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-kucho-forest border-4 border-white flex items-center justify-center font-bold text-[10px] text-kucho-dark">
                   3
                 </span>
-                <h4 className="font-extrabold text-kucho-forest text-base mb-1">Barrier Protection & Warranty</h4>
+                <h4 className="font-extrabold text-black text-base mb-1">Barrier Protection & Warranty</h4>
                 <p className="text-sm text-zinc-500 leading-relaxed">
                   We install perimeter defenses to block pest re-entry, backed by our 100% money-back satisfaction guarantee.
                 </p>
@@ -732,10 +732,10 @@ export default function KuchoLanding() {
       <section id="pricing" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               MEMBERSHIP PLANS
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6">
               Customized pricing plans for your pest control needs
             </h2>
 
@@ -760,16 +760,16 @@ export default function KuchoLanding() {
             {/* Plan 1 */}
             <div className="bg-kucho-light rounded-3xl p-8 border border-kucho-forest/5 flex flex-col justify-between text-left transition-all duration-300 relative overflow-hidden">
               <div>
-                <h3 className="text-lg font-extrabold text-kucho-forest mb-2">Basic Protect</h3>
+                <h3 className="text-lg font-extrabold text-black mb-2">Basic Protect</h3>
                 <p className="text-xs text-zinc-500 font-medium mb-6">Ideal for standard single-family homes struggling with minor bugs.</p>
                 <div className="flex items-baseline mb-6">
-                  <span className="text-4xl font-extrabold text-kucho-forest">
+                  <span className="text-4xl font-extrabold text-black">
                     ${billingPeriod === "monthly" ? "99" : "79"}
                   </span>
                   <span className="text-zinc-400 text-xs font-semibold ml-1">/ month</span>
                 </div>
                 <div className="h-[1px] bg-kucho-forest/10 mb-6"></div>
-                <ul className="text-xs font-semibold text-kucho-forest/90 space-y-4 mb-8">
+                <ul className="text-xs font-semibold text-black/90 space-y-4 mb-8">
                   <li className="flex items-center gap-2">
                     <Icons.Check /> Quarterly exterior barrier spray
                   </li>
@@ -797,20 +797,20 @@ export default function KuchoLanding() {
 
             {/* Plan 2 - Recommended */}
             <div className="bg-white rounded-3xl p-8 border-4 border-kucho-forest flex flex-col justify-between text-left transition-all duration-300 relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-kucho-lime text-kucho-dark text-[10px] font-bold tracking-widest uppercase px-6 py-2 rounded-bl-2xl">
+              <div className="absolute top-0 right-0 bg-kucho-forest text-kucho-dark text-[10px] font-bold tracking-widest uppercase px-6 py-2 rounded-bl-2xl">
                 Most Popular
               </div>
               <div>
-                <h3 className="text-lg font-extrabold text-kucho-forest mb-2">Standard Shield</h3>
+                <h3 className="text-lg font-extrabold text-black mb-2">Standard Shield</h3>
                 <p className="text-xs text-zinc-500 font-medium mb-6">Comprehensive protection for active properties with persistent pests.</p>
                 <div className="flex items-baseline mb-6">
-                  <span className="text-4xl font-extrabold text-kucho-forest">
+                  <span className="text-4xl font-extrabold text-black">
                     ${billingPeriod === "monthly" ? "150" : "119"}
                   </span>
                   <span className="text-zinc-400 text-xs font-semibold ml-1">/ month</span>
                 </div>
                 <div className="h-[1px] bg-kucho-forest/10 mb-6"></div>
-                <ul className="text-xs font-semibold text-kucho-forest/90 space-y-4 mb-8">
+                <ul className="text-xs font-semibold text-black/90 space-y-4 mb-8">
                   <li className="flex items-center gap-2">
                     <Icons.Check /> Every-other-month treatment
                   </li>
@@ -830,7 +830,7 @@ export default function KuchoLanding() {
               </div>
               <a
                 href="#book"
-                className="w-full h-12 flex items-center justify-center text-sm font-bold bg-kucho-lime text-kucho-dark hover:bg-kucho-lime-hover rounded-full transition-all duration-300"
+                className="w-full h-12 flex items-center justify-center text-sm font-bold bg-kucho-forest text-kucho-dark hover:bg-kucho-forest rounded-full transition-all duration-300"
               >
                 Choose Standard Plan
               </a>
@@ -839,16 +839,16 @@ export default function KuchoLanding() {
             {/* Plan 3 */}
             <div className="bg-kucho-light rounded-3xl p-8 border border-kucho-forest/5 flex flex-col justify-between text-left transition-all duration-300 relative overflow-hidden">
               <div>
-                <h3 className="text-lg font-extrabold text-kucho-forest mb-2">Premium Defense</h3>
+                <h3 className="text-lg font-extrabold text-black mb-2">Premium Defense</h3>
                 <p className="text-xs text-zinc-500 font-medium mb-6">Unbeatable full-spectrum warranty and absolute structural security.</p>
                 <div className="flex items-baseline mb-6">
-                  <span className="text-4xl font-extrabold text-kucho-forest">
+                  <span className="text-4xl font-extrabold text-black">
                     ${billingPeriod === "monthly" ? "250" : "199"}
                   </span>
                   <span className="text-zinc-400 text-xs font-semibold ml-1">/ month</span>
                 </div>
                 <div className="h-[1px] bg-kucho-forest/10 mb-6"></div>
-                <ul className="text-xs font-semibold text-kucho-forest/90 space-y-4 mb-8">
+                <ul className="text-xs font-semibold text-black/90 space-y-4 mb-8">
                   <li className="flex items-center gap-2">
                     <Icons.Check /> Monthly treatment & checks
                   </li>
@@ -880,11 +880,11 @@ export default function KuchoLanding() {
       {/* 11. TESTIMONIALS (DARK GREEN BACKGROUND) */}
       <section id="testimonials" className="py-24 bg-kucho-forest text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-kucho-lime/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-kucho-forest/5 rounded-full blur-3xl"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block px-3 py-1 bg-kucho-lime/20 rounded-md text-kucho-lime text-xs font-bold tracking-wider mb-4">
+            <span className="inline-block px-3 py-1 bg-kucho-forest/20 rounded-md text-black text-xs font-bold tracking-wider mb-4">
               CLIENT TESTIMONIALS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -906,7 +906,7 @@ export default function KuchoLanding() {
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                <div className="w-10 h-10 rounded-full bg-kucho-lime text-kucho-dark flex items-center justify-center font-bold text-xs select-none">
+                <div className="w-10 h-10 rounded-full bg-kucho-forest text-kucho-dark flex items-center justify-center font-bold text-xs select-none">
                   JD
                 </div>
                 <div>
@@ -929,7 +929,7 @@ export default function KuchoLanding() {
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                <div className="w-10 h-10 rounded-full bg-kucho-lime text-kucho-dark flex items-center justify-center font-bold text-xs select-none">
+                <div className="w-10 h-10 rounded-full bg-kucho-forest text-kucho-dark flex items-center justify-center font-bold text-xs select-none">
                   MR
                 </div>
                 <div>
@@ -952,7 +952,7 @@ export default function KuchoLanding() {
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                <div className="w-10 h-10 rounded-full bg-kucho-lime text-kucho-dark flex items-center justify-center font-bold text-xs select-none">
+                <div className="w-10 h-10 rounded-full bg-kucho-forest text-kucho-dark flex items-center justify-center font-bold text-xs select-none">
                   LH
                 </div>
                 <div>
@@ -968,10 +968,10 @@ export default function KuchoLanding() {
       {/* 12. FREE ESTIMATE BOOKING FORM */}
       <section id="book" className="py-24 bg-gradient-to-b from-white to-kucho-light overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-kucho-forest text-xs font-bold tracking-wider mb-4">
+          <div className="inline-block px-3 py-1 bg-kucho-forest/10 rounded-md text-black text-xs font-bold tracking-wider mb-4">
             EASY SCHEDULING
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-kucho-forest tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-4">
             Book your free pest inspection & quote
           </h2>
           <p className="text-sm text-zinc-500 font-medium max-w-lg mx-auto mb-12">
@@ -981,17 +981,17 @@ export default function KuchoLanding() {
           <div className="bg-white rounded-3xl p-8 sm:p-12 border border-kucho-forest/5 text-left relative">
             {submittedBooking ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <div className="w-16 h-16 rounded-full bg-kucho-lime/20 flex items-center justify-center text-kucho-forest font-bold text-3xl mb-6">
+                <div className="w-16 h-16 rounded-full bg-kucho-forest/20 flex items-center justify-center text-kucho-forest font-bold text-3xl mb-6">
                   ✓
                 </div>
-                <h3 className="text-2xl font-bold text-kucho-forest mb-2">Request Submitted Successfully!</h3>
+                <h3 className="text-2xl font-bold text-black mb-2">Request Submitted Successfully!</h3>
                 <p className="text-sm text-zinc-500 font-medium">We have received your estimate request and our team is routing a technician to call you back.</p>
               </div>
             ) : (
               <form onSubmit={handleBookingSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold text-kucho-forest uppercase tracking-wider mb-2" htmlFor="name">
+                    <label className="block text-xs font-bold text-black uppercase tracking-wider mb-2" htmlFor="name">
                       Full Name
                     </label>
                     <input
@@ -1005,7 +1005,7 @@ export default function KuchoLanding() {
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-kucho-forest uppercase tracking-wider mb-2" htmlFor="phone">
+                    <label className="block text-xs font-bold text-black uppercase tracking-wider mb-2" htmlFor="phone">
                       Phone Number
                     </label>
                     <input
@@ -1022,7 +1022,7 @@ export default function KuchoLanding() {
 
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-bold text-kucho-forest uppercase tracking-wider mb-2" htmlFor="pest">
+                    <label className="block text-xs font-bold text-black uppercase tracking-wider mb-2" htmlFor="pest">
                       Pest Category
                     </label>
                     <select
@@ -1039,7 +1039,7 @@ export default function KuchoLanding() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-kucho-forest uppercase tracking-wider mb-2" htmlFor="date">
+                    <label className="block text-xs font-bold text-black uppercase tracking-wider mb-2" htmlFor="date">
                       Preferred Date
                     </label>
                     <input
@@ -1054,7 +1054,7 @@ export default function KuchoLanding() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-kucho-forest uppercase tracking-wider mb-2" htmlFor="message">
+                  <label className="block text-xs font-bold text-black uppercase tracking-wider mb-2" htmlFor="message">
                     Describe infestation (Optional)
                   </label>
                   <textarea
@@ -1069,7 +1069,7 @@ export default function KuchoLanding() {
 
                 <button
                   type="submit"
-                  className="w-full h-14 flex items-center justify-center font-bold bg-kucho-lime text-kucho-dark hover:bg-kucho-lime-hover rounded-xl transition-all"
+                  className="w-full h-14 flex items-center justify-center font-bold bg-kucho-forest text-kucho-dark hover:bg-kucho-forest rounded-xl transition-all"
                 >
                   Submit Quote Request
                 </button>
@@ -1084,20 +1084,20 @@ export default function KuchoLanding() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-left">
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <span className="w-8 h-8 rounded-lg bg-kucho-lime flex items-center justify-center text-kucho-dark font-bold text-base">
+              <span className="w-8 h-8 rounded-lg bg-kucho-forest flex items-center justify-center text-kucho-dark font-bold text-base">
                 k
               </span>
               <span className="text-xl font-bold tracking-tight text-white">
-                kucho<span className="text-kucho-lime">.</span>
+                kucho<span className="text-kucho-forest">.</span>
               </span>
             </div>
             <p className="text-xs text-zinc-400 leading-relaxed mb-6">
               Premium pest elimination and long-term protective barriers. Keeping families and business spaces secure.
             </p>
             <div className="flex items-center gap-4 text-xs font-semibold text-zinc-300">
-              <span className="hover:text-kucho-lime cursor-pointer transition-colors">Twitter</span>
-              <span className="hover:text-kucho-lime cursor-pointer transition-colors">Facebook</span>
-              <span className="hover:text-kucho-lime cursor-pointer transition-colors">LinkedIn</span>
+              <span className="hover:text-kucho-forest cursor-pointer transition-colors">Twitter</span>
+              <span className="hover:text-kucho-forest cursor-pointer transition-colors">Facebook</span>
+              <span className="hover:text-kucho-forest cursor-pointer transition-colors">LinkedIn</span>
             </div>
           </div>
 
