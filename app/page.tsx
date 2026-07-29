@@ -54,32 +54,32 @@ const services = [
   {
     title: "Rodent Control",
     desc: "Eliminate rats and mice before they damage property or contaminate food supplies.",
-    img: "https://api.kucho.co/uploads/Rats_360x290_725f382849.jpg",
+    img: "/services/rodent_control.png",
   },
   {
     title: "Termite Treatment",
     desc: "Protect wooden structures, furniture, and buildings from costly termite damage.",
-    img: "https://api.kucho.co/uploads/Termite_360x290_bd853c48ff.jpg",
+    img: "/services/termite.png",
   },
   {
     title: "Bed Bugs Control",
     desc: "Effective treatments designed to eliminate bed bugs and prevent re-infestation.",
-    img: "https://api.kucho.co/uploads/bed_bug_killers_for_a_pest_free_home_3d23041588.webp",
+    img: "/services/bedbug.png",
   },
   {
     title: "Cockroach Control",
     desc: "Target infestations at the source and keep your property pest-free.",
-    img: "https://api.kucho.co/uploads/Cockroach_1920x1080_1_e4e32d1d6f.jpg",
+    img: "/services/cockroach.png",
   },
   {
     title: "Mosquito Control",
     desc: "Reduce mosquito populations around homes, gardens, and workplaces.",
-    img: "https://api.kucho.co/uploads/Mosquito_Control_Servcie_in_Nepal_7a15b0e61d.jpg",
+    img: "/services/mosquito.png",
   },
   {
     title: "Ant Control",
     desc: "Remove active colonies and prevent recurring ant infestations.",
-    img: "https://api.kucho.co/uploads/Ants_Control_Kucho_164b9aa114.png",
+    img: "/services/ant.png",
   },
 ];
 
@@ -163,22 +163,18 @@ export default function Home() {
           }`}
         >
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4 text-white text-sm font-medium">
-            {[
-              "Home",
-              "About",
-              "Services",
-              "Testimonials",
-              "Contact",
-            ].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-amber-400 transition-colors py-2"
-              >
-                {item}
-              </a>
-            ))}
+            {["Home", "About", "Services", "Testimonials", "Contact"].map(
+              (item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-amber-400 transition-colors py-2"
+                >
+                  {item}
+                </a>
+              ),
+            )}
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
@@ -531,10 +527,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
-
-
       {/* Testimonials */}
       <section id="testimonials" className="bg-kucho-forest py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
@@ -571,8 +563,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
       {/* CTA */}
       <section className="bg-kucho-dark py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -603,17 +593,17 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-kucho-forest pt-16 pb-6">
+      <footer className="bg-white pt-16 pb-6">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex flex-col md:flex-row gap-10 md:gap-20">
             <div className="md:w-1/2">
               <a
                 href="#"
-                className="text-3xl font-extrabold text-white flex items-center gap-1 mb-6"
+                className="text-3xl font-extrabold text-black flex items-center gap-1 mb-6"
               >
-                <span className="text-emerald-500">KU</span>CHO
+                <img src="/logo.png" alt="Kucho" className="h-20 w-auto" />
               </a>
-              <p className="text-white text-sm leading-relaxed max-w-sm">
+              <p className="text-black text-sm leading-relaxed max-w-sm">
                 Feel free to contact us during business hours. Our team is ready
                 to help protect your home or business from pests.
               </p>
@@ -625,19 +615,19 @@ export default function Home() {
                     <a
                       key={i}
                       href="#"
-                      className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:bg-amber-400 transition-colors"
+                      className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-black text-sm hover:bg-amber-400 transition-colors"
                     >
                       <Icon />
                     </a>
                   ),
                 )}
               </div>
-              <p className="flex items-center gap-2 text-white text-sm">
+              <p className="flex items-center gap-2 text-black text-sm">
                 <FaPhoneAlt className="text-black" /> 9802317551
               </p>
             </div>
           </div>
-          <div className="border-t border-white/30 mt-10 pt-6 flex flex-col sm:flex-row gap-2 justify-center text-center text-xs text-white">
+          <div className="border-t border-white/30 mt-10 pt-6 flex flex-col sm:flex-row gap-2 justify-center text-center text-xs text-black">
             <p>&copy;2026 Kucho. All rights reserved.</p>
             <p className="hidden sm:block">|</p>
             <p>Designed by Infinity Digital Agency</p>
