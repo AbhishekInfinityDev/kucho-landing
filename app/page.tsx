@@ -7,8 +7,6 @@ import {
   FaArrowRight,
   FaShieldAlt,
   FaBolt,
-  FaThumbsUp,
-  FaAward,
   FaPhoneAlt,
   FaEnvelope,
   FaClock,
@@ -84,9 +82,9 @@ const services = [
 ];
 
 const heroSlides = [
-  "https://storage.googleapis.com/a1aa/image/501df5cf-53da-4ecc-5fc9-a30370046f67.jpg",
-  "https://storage.googleapis.com/a1aa/image/ebe21c0f-7d18-440e-4b94-eb033e8661eb.jpg",
-  "https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg",
+  "/images/hero-image1.jpeg",
+  "/images/hero-image2.jpeg",
+  "/images/hero-image3.jpeg",
 ];
 
 export default function Home() {
@@ -338,14 +336,15 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="lg:w-1/2 w-full">
             <div className="flex flex-row gap-4">
+                {/* src="https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg" */}
               <img
-                src="https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg"
+                src={"/images/kucho-1.jpeg"}
                 alt=""
                 className="rounded-xl object-cover w-1/2 h-[400px] lg:h-[500px]"
               />
               <div className="flex flex-col w-1/2 gap-4">
                 <div className="bg-kucho-dark rounded-xl flex flex-col justify-center items-center p-6 h-1/2">
-                  <h2 className="text-5xl font-extrabold text-kucho-forest leading-none">
+                  <h2 className="text-5xl text-white font-extrabold text-kucho-forest leading-none">
                     25+
                   </h2>
                   <p className="text-white font-semibold text-center mt-2 leading-tight">
