@@ -225,7 +225,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300"
+                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300 text-black hover:text-white"
               >
                 Schedule Inspection
               </a>
