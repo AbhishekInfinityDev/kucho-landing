@@ -471,62 +471,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
-        <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20">
-          <div className="flex-shrink-0 w-full md:w-1/2">
-            <img
-              src="https://storage.googleapis.com/a1aa/image/ebe21c0f-7d18-440e-4b94-eb033e8661eb.jpg"
-              alt=""
-              className="rounded-xl w-full h-[400px] md:h-[550px] object-cover"
-            />
-          </div>
-          <div className="w-full md:w-1/2">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-3">
-              Why Choose Us
-            </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              Trusted Pest Control Professionals
-            </h2>
-            <p className="text-gray-500 mb-10 max-w-xl leading-relaxed">
-              Property owners across Kathmandu Valley trust Kucho for safe,
-              reliable, and long-lasting pest management solutions.
-            </p>
-            <ul className="space-y-8 max-w-xl">
-              {[
-                {
-                  icon: FaShieldAlt,
-                  title: "Comprehensive Protection",
-                  desc: "Inspection, treatment, monitoring, and prevention for complete peace of mind.",
-                },
-                {
-                  icon: FaThumbsUp,
-                  title: "Eco-Conscious Methods",
-                  desc: "Safe treatments designed for families, pets, customers, and employees.",
-                },
-                {
-                  icon: FaAward,
-                  title: "Certified Experts",
-                  desc: "Experienced professionals trained in modern pest control practices.",
-                },
-              ].map((item) => (
-                <li key={item.title} className="flex items-start gap-5">
-                  <div className="flex items-center justify-center w-14 h-14 bg-kucho-dark rounded-xl flex-shrink-0">
-                    <item.icon className="text-kucho-forest text-lg" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg text-black mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm">{item.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section id="testimonials" className="bg-kucho-forest py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
