@@ -9,7 +9,6 @@ import {
   FaBolt,
   FaThumbsUp,
   FaAward,
-  FaChevronDown,
   FaPhoneAlt,
   FaEnvelope,
   FaClock,
@@ -20,70 +19,34 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-const teamMembers = [
-  {
-    name: "John Anderson",
-    role: "CEO & Founder",
-    img: "https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg",
-  },
-  {
-    name: "Sarah Mitchell",
-    role: "Head Technician",
-    img: "https://storage.googleapis.com/a1aa/image/976071dc-856e-4bdd-cea9-0d42c98ec036.jpg",
-  },
-  {
-    name: "David Chen",
-    role: "Operations Manager",
-    img: "https://storage.googleapis.com/a1aa/image/c85c660d-2881-479c-2fec-c8d30ac24f6b.jpg",
-  },
-  {
-    name: "Emily Roberts",
-    role: "Customer Relations",
-    img: "https://storage.googleapis.com/a1aa/image/d5e16eef-f02e-42db-2f3c-3a2c6d868863.jpg",
-  },
-];
-
 const testimonials = [
   {
-    text: "Kucho solved our restaurant's cockroach problem quickly and professionally. Highly recommended.",
-    author: "James Davidson",
-    title: "Restaurant Owner",
-    initials: "RS",
+    text: "Professional cleaning end result was more that expected really recommend it......",
+    author: "deepshikha rana",
+    title: "Google Review",
+    initials: "DR",
+    stars: 5,
   },
   {
-    text: "Excellent service and knowledgeable technicians. Our termite issue was resolved completely.",
-    author: "Maria Patel",
-    title: "Homeowner",
-    initials: "PK",
+    text: "Very responsive and quick service. Hope u will keep your services all the time to all clients. We will definitely use your service in future if we require any.",
+    author: "Pushpa Shrestha",
+    title: "Google Review",
+    initials: "PS",
+    stars: 4,
   },
   {
-    text: "Professional team, fair pricing, and outstanding results from start to finish",
-    author: "Thomas Rivera",
-    title: "Business Owner",
-    initials: "BT",
-  },
-];
-
-const faqs = [
-  {
-    q: "What pest control methods do you use?",
-    a: "We use a combination of eco-friendly chemical treatments, traps, exclusion techniques, and integrated pest management (IPM) strategies tailored to each specific infestation.",
+    text: "Kuch team performed a deep clean of my living room. Very satisfied with the team they sent and the cleaning work was very satisfactory. Specially recommended for sofa cleaning",
+    author: "nikita motani",
+    title: "Google Review",
+    initials: "NM",
+    stars: 4,
   },
   {
-    q: "Are your treatments safe for pets and children?",
-    a: "Yes. We prioritize eco-conscious products that are safe for your family and pets. Our technicians will provide specific instructions on any necessary precautions.",
-  },
-  {
-    q: "How often should pest control be done?",
-    a: "For most homes, quarterly treatments suffice. However, commercial properties or severe infestations may require monthly or bi-monthly visits. We offer customized maintenance plans.",
-  },
-  {
-    q: "Do you offer emergency pest control services?",
-    a: "Absolutely. We offer 24/7 emergency services for urgent infestations. Call our hotline and we'll dispatch a technician immediately.",
-  },
-  {
-    q: "What areas do you serve?",
-    a: "We serve residential and commercial properties across the metropolitan area and surrounding suburbs. Contact us to check availability in your location.",
+    text: "Good service. Thank you",
+    author: "Kami Sherpa",
+    title: "Google Review",
+    initials: "KS",
+    stars: 5,
   },
 ];
 
@@ -91,32 +54,32 @@ const services = [
   {
     title: "Rodent Control",
     desc: "Eliminate rats and mice before they damage property or contaminate food supplies.",
-    img: "https://storage.googleapis.com/a1aa/image/ea1f462a-dc58-4919-8e06-05a8ae49a931.jpg",
+    img: "/services/rodent_control.png",
   },
   {
     title: "Termite Treatment",
     desc: "Protect wooden structures, furniture, and buildings from costly termite damage.",
-    img: "https://storage.googleapis.com/a1aa/image/72fc41dd-b3c2-4bd9-325b-9897b8052a28.jpg",
+    img: "/services/termite.png",
   },
   {
     title: "Bed Bugs Control",
     desc: "Effective treatments designed to eliminate bed bugs and prevent re-infestation.",
-    img: "https://storage.googleapis.com/a1aa/image/96b40a84-794f-4fbf-b984-6cec0af8f268.jpg",
+    img: "/services/bedbug.png",
   },
   {
     title: "Cockroach Control",
     desc: "Target infestations at the source and keep your property pest-free.",
-    img: "https://storage.googleapis.com/a1aa/image/ea1f462a-dc58-4919-8e06-05a8ae49a931.jpg",
+    img: "/services/cockroach.png",
   },
   {
     title: "Mosquito Control",
     desc: "Reduce mosquito populations around homes, gardens, and workplaces.",
-    img: "https://storage.googleapis.com/a1aa/image/72fc41dd-b3c2-4bd9-325b-9897b8052a28.jpg",
+    img: "/services/mosquito.png",
   },
   {
     title: "Ant Control",
     desc: "Remove active colonies and prevent recurring ant infestations.",
-    img: "https://storage.googleapis.com/a1aa/image/96b40a84-794f-4fbf-b984-6cec0af8f268.jpg",
+    img: "/services/ant.png",
   },
 ];
 
@@ -130,8 +93,6 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [heroIdx, setHeroIdx] = useState(0);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIdx((i) => (i + 1) % heroSlides.length);
@@ -166,7 +127,6 @@ export default function Home() {
                   "Home",
                   "About",
                   "Services",
-                  "Process",
                   "Testimonials",
                   "Contact",
                 ].map((item) => (
@@ -175,7 +135,7 @@ export default function Home() {
                     href={`#${item.toLowerCase()}`}
                     className="hover:text-amber-400 transition-colors"
                   >
-                    {item === "Process" ? "How It Works" : item}
+                    {item}
                   </a>
                 ))}
               </div> */}
@@ -203,23 +163,18 @@ export default function Home() {
           }`}
         >
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4 text-white text-sm font-medium">
-            {[
-              "Home",
-              "About",
-              "Services",
-              "Process",
-              "Testimonials",
-              "Contact",
-            ].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-amber-400 transition-colors py-2"
-              >
-                {item === "Process" ? "How It Works" : item}
-              </a>
-            ))}
+            {["Home", "About", "Services", "Testimonials", "Contact"].map(
+              (item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:text-amber-400 transition-colors py-2"
+                >
+                  {item}
+                </a>
+              ),
+            )}
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
@@ -266,7 +221,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300"
+                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300 text-black hover:text-white"
               >
                 Schedule Inspection
               </a>
@@ -572,144 +527,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Process / Real Cases */}
-      <section id="process" className="bg-kucho-light py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-14">
-            <p className="text-sm font-bold uppercase tracking-widest mb-2">
-              Our Process
-            </p>
-            <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">
-              Real Cases — Real Results
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              See how Kucho helps homes and businesses eliminate infestations
-              and stay protected year-round.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-6">
-              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/ad7999d0-32c7-4950-ca1b-6adabdd7c21a.jpg"
-                  alt=""
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">
-                  Residential
-                </p>
-                <h3 className="font-bold text-xl text-black mb-2">
-                  Rodent Control for Family Home
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Successfully eliminated rodent activity and sealed key entry
-                  points.
-                </p>
-              </div>
-              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/efc83f1c-970b-438e-2925-ae784276df3b.jpg"
-                  alt=""
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">
-                  Industrial
-                </p>
-                <h3 className="font-bold text-xl text-black mb-2">
-                  Termite Protection for Warehouse
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Prevented termite damage to valuable inventory and wooden
-                  structures.
-                </p>
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">
-                  Commercial
-                </p>
-                <h3 className="font-bold text-xl text-black mb-2">
-                  Cockroach Treatment for Restaurant
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Removed infestation sources and improved hygiene compliance
-                  standards
-                </p>
-              </div>
-              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/9f2b6281-a214-4e40-064b-61417c94935c.jpg"
-                  alt=""
-                  className="w-full h-auto"
-                />
-              </div>
-              <div className="bg-white rounded-xl p-6">
-                <p className="text-sm uppercase font-semibold mb-1">
-                  Residential
-                </p>
-                <h3 className="font-bold text-xl text-black mb-2">
-                  Mosquito Reduction Program
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  Significantly reduced mosquito activity around outdoor living
-                  spaces.
-                </p>
-              </div>
-              <div className="rounded-xl overflow-hidden border border-kucho-forest/10">
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/df6dfd81-5f7c-456d-2ac1-dc271b649380.jpg"
-                  alt=""
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      {/* <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28">
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-2">
-            Our Team
-          </p>
-          <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">
-            Meet The Experts
-          </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Our certified professionals are dedicated to providing the highest
-            quality pest control services.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {teamMembers.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white rounded-xl overflow-hidden border border-kucho-forest/10 hover:border-kucho-forest transition-all duration-300 group"
-            >
-              <div className="h-72 overflow-hidden">
-                <img
-                  src={member.img}
-                  alt=""
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-5 text-center">
-                <h3 className="font-bold text-black text-lg">{member.name}</h3>
-                <p className="text-gray-500 text-sm font-medium">
-                  {member.role}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
       {/* Testimonials */}
       <section id="testimonials" className="bg-kucho-forest py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
@@ -728,7 +545,7 @@ export default function Home() {
                 className="bg-white rounded-xl p-8 md:p-10 text-center"
               >
                 <div className="text-amber-400 text-2xl mb-4 flex justify-center gap-1">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(t.stars || 5)].map((_, i) => (
                     <FaStar key={i} />
                   ))}
                 </div>
@@ -743,45 +560,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="max-w-3xl mx-auto px-6 sm:px-8 py-20 md:py-28">
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold uppercase tracking-widest mb-2">
-            FAQ
-          </p>
-          <h2 className="font-extrabold text-4xl md:text-5xl text-black mb-4">
-            Frequently Asked Questions
-          </h2>
-        </div>
-        <div className="space-y-4">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="border border-gray-200 rounded-xl overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full flex items-center justify-between p-5 text-left font-semibold text-black hover:bg-gray-50 transition-colors"
-              >
-                {faq.q}
-                <FaChevronDown
-                  className={`text-kucho-forest transition-transform duration-300 ${
-                    openFaq === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              <div
-                className={`px-5 pb-5 text-gray-500 text-sm leading-relaxed ${
-                  openFaq === i ? "block" : "hidden"
-                }`}
-              >
-                {faq.a}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
