@@ -129,7 +129,7 @@ export default function Home() {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "border-b border-kucho-forest/10" : ""
+          scrolled ? "border-b border-kucho-500/10" : ""
         }`}
       >
         <div className="bg-white backdrop-blur-sm">
@@ -149,7 +149,7 @@ export default function Home() {
                   <a
                     key={item}
                     href={`#${item.toLowerCase()}`}
-                    className="hover:text-amber-400 transition-colors"
+                    className="hover:text-kucho-500 transition-colors"
                   >
                     {item}
                   </a>
@@ -174,7 +174,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className={`lg:hidden bg-kucho-forest border-t border-white/20 ${
+          className={`lg:hidden bg-kucho-500 border-t border-white/20 ${
             menuOpen ? "block" : "hidden"
           }`}
         >
@@ -185,7 +185,7 @@ export default function Home() {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setMenuOpen(false)}
-                  className="hover:text-amber-400 transition-colors py-2"
+                  className="hover:text-kucho-200 transition-colors py-2"
                 >
                   {item}
                 </a>
@@ -220,7 +220,7 @@ export default function Home() {
         ))}
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">
           <div className="max-w-2xl text-white">
-            <p className="text-sm font-semibold text-green-400 mb-3 tracking-widest uppercase">
+            <p className="text-sm font-semibold text-kucho-300 mb-3 tracking-widest uppercase">
 TRUSTED PEST CONTROL EXPERTS IN NEPAL
             </p>
             <h1 className="font-extrabold text-5xl lg:text-6xl mb-5 leading-tight">
@@ -288,7 +288,7 @@ Schedule Your Free Pest Inspection
                   onMouseEnter={contactIcons.onEnter}
                   onMouseLeave={contactIcons.onLeave}
                 >
-                  <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
+                  <div className="w-12 h-12 bg-kucho-50 rounded-lg flex items-center justify-center text-kucho-500 flex-shrink-0">
                     <item.icon size={20} ref={contactIcons.setRef(i)} />
                   </div>
                   <div>
@@ -299,13 +299,13 @@ Schedule Your Free Pest Inspection
               ))}
             </div>
           </div>
-          <div className="bg-kucho-100 rounded-xl p-8">
+          <div className="bg-kucho-500 rounded-xl p-8">
             <h3 className="text-xl font-bold text-black mb-6">
 Book Your Inspection
             </h3>
             <form>
               {["Name", "Email", "Phone Number"].map((field) => (
-                <div key={field} className="mb-4">
+                <div key={field} className="mb-4 ">
                   <label className="text-sm font-medium text-gray-700 mb-1 block">
                     {field}
                   </label>
@@ -318,7 +318,7 @@ Book Your Inspection
                           : "text"
                     }
                     placeholder={`Your ${field}`}
-                    className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-forest border border-transparent focus:border-white bg-white"
+                    className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-500 border border-transparent focus:border-white bg-white"
                   />
                 </div>
               ))}
@@ -329,7 +329,7 @@ Book Your Inspection
                 <textarea
                   placeholder="Tell us about your pest problem"
                   rows={4}
-                  className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-forest border border-transparent focus:border-white resize-none bg-white"
+                  className="w-full rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-kucho-500 border border-transparent focus:border-white resize-none bg-white"
                 />
               </div>
               <button
@@ -373,9 +373,9 @@ Book Your Inspection
                   title: "Across Kathmandu Valley",
                 },
               ].map((item) => (
-                <div className="bg-kucho-dark rounded-xl flex flex-col justify-center items-center p-6">
+                <div className="bg-kucho-800 rounded-xl flex flex-col justify-center items-center p-6">
 
-                  <h2 className="text-4xl text-white font-extrabold text-kucho-forest leading-none">
+                  <h2 className="text-4xl text-white font-extrabold text-kucho-300 leading-none">
                   {item.number}
                   </h2>
                   <p className="text-white font-semibold text-center mt-2 leading-tight">
@@ -418,7 +418,7 @@ Kucho is one of Kathmandu Valley's most trusted names in pest control, protectin
                   onMouseEnter={aboutIcons.onEnter}
                   onMouseLeave={aboutIcons.onLeave}
                 >
-                  <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
+                  <div className="w-12 h-12 bg-kucho-50 rounded-lg flex items-center justify-center text-kucho-500 flex-shrink-0">
                     <item.icon size={24} ref={aboutIcons.setRef(i)} />
                   </div>
                   <div>
@@ -468,7 +468,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
             {services.map((svc, i) => (
               <div
                 key={svc.title}
-                className="bg-white rounded-xl overflow-hidden border border-kucho-forest/10 hover:border-kucho-forest transition-all duration-300 group"
+                className="bg-white rounded-xl overflow-hidden border border-kucho-500/10 hover:border-kucho-500 transition-all duration-300 group"
                 onMouseEnter={serviceIcons.onEnter}
                 onMouseLeave={serviceIcons.onLeave}
               >
@@ -488,7 +488,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
                   </p>
                   <a
                     href="#contact"
-                    className="font-semibold inline-flex items-center gap-2 text-sm hover:text-amber-400 transition-colors"
+                    className="font-semibold inline-flex items-center gap-2 text-sm hover:text-kucho-500 transition-colors"
                   >
                     {svc.title} Service{" "}
                     <ArrowRightIcon size={16} ref={serviceIcons.setRef(i)} />
@@ -501,7 +501,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="bg-kucho-forest py-20 md:py-28">
+      <section id="testimonials" className="bg-kucho-500 py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-sm font-semibold text-white uppercase tracking-widest mb-2">
@@ -517,7 +517,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
                 key={t.author}
                 className="bg-white rounded-xl p-8 md:p-10 text-center"
               >
-                <div className="text-amber-400 text-2xl mb-4 flex justify-center gap-1">
+                <div className="text-kucho-500 text-2xl mb-4 flex justify-center gap-1">
                   {[...Array(t.stars || 5)].map((_, i) => (
                     <FaStar key={i} />
                   ))}
@@ -525,7 +525,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
                 <p className="text-gray-600 leading-relaxed mb-6 italic">
                   &ldquo;{t.text}&rdquo;
                 </p>
-                <div className="w-16 h-16 rounded-full bg-kucho-light mx-auto mb-3 flex items-center justify-center text-kucho-forest text-2xl font-bold">
+                <div className="w-16 h-16 rounded-full bg-kucho-50 mx-auto mb-3 flex items-center justify-center text-kucho-500 text-2xl font-bold">
                   {t.initials}
                 </div>
                 <h4 className="font-bold text-black">{t.author}</h4>
@@ -537,11 +537,11 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
       </section>
 
       {/* CTA */}
-      <section className="bg-kucho-dark py-16 md:py-20">
+      <section className="bg-kucho-800 py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5">
-              <p className="text-sm font-semibold text-kucho-forest uppercase tracking-widest mb-3">
+              <p className="text-sm font-semibold text-kucho-300 uppercase tracking-widest mb-3">
 GET STARTED TODAY
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
@@ -586,7 +586,7 @@ Don't let pests damage your property or disrupt your business. Trust Kathmandu V
                     <a
                       key={i}
                       href="#"
-                      className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-black text-sm hover:bg-amber-400 transition-colors"
+                      className="w-8 h-8 rounded-full bg-kucho-500 flex items-center justify-center text-black text-sm hover:bg-kucho-400 transition-colors"
                       onMouseEnter={socialIcons.onEnter}
                       onMouseLeave={socialIcons.onLeave}
                     >
