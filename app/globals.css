@@ -15,6 +15,17 @@
   --color-kucho-light: #f0fdfa;
   --color-kucho-charcoal: #18181b;
   --color-kucho-muted: #4b5563;
+  --color-kucho-50: #eefdfc;
+  --color-kucho-100: #d3faf9;
+  --color-kucho-200: #acf5f5;
+  --color-kucho-300: #73ebed;
+  --color-kucho-400: #33d8dd;
+  --color-kucho-500: #17b8bf;
+  --color-kucho-600: #1697a4;
+  --color-kucho-700: #197985;
+  --color-kucho-800: #1d626d;
+  --color-kucho-900: #1d515c;
+  --color-kucho-950: #0d363f;
   --animate-fade-in-up: fade-in-up 0.5s ease-out forwards;
 }
 

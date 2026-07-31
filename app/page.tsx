@@ -299,7 +299,7 @@ Schedule Your Free Pest Inspection
               ))}
             </div>
           </div>
-          <div className="bg-kucho-light rounded-xl p-8">
+          <div className="bg-kucho-100 rounded-xl p-8">
             <h3 className="text-xl font-bold text-black mb-6">
 Book Your Inspection
             </h3>
@@ -441,7 +441,7 @@ Kucho is one of Kathmandu Valley's most trusted names in pest control, protectin
       </section>
 
       {/* Services */}
-      <section id="services" className="bg-kucho-light py-20 md:py-28">
+      <section id="services" className="bg-kucho-50 py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
             <div className="lg:col-span-5">
