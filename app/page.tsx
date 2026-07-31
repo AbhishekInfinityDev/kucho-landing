@@ -176,7 +176,7 @@ export default function Home() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="bg-amber-200 text-black font-semibold text-sm rounded-full px-5 py-2.5 text-center mt-2 hover:bg-amber-400 hover:text-white transition-all"
+              className="bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 text-center mt-2 hover:bg-amber-400 hover:text-white transition-all duration-300"
             >
               View Our Plans
             </a>
@@ -215,9 +215,9 @@ Protect your home or business from termites, cockroaches, rodents, bed bugs, mos
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300 text-black hover:text-white"
+                className="inline-block bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
               >
-Schedule Free Inspection
+                View Our Plans
               </a>
               <a
                 href="#services"
@@ -311,9 +311,9 @@ Book Your Inspection
               </div>
               <button
                 type="submit"
-                className="w-full bg-amber-400 text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition-colors"
+                className="w-full bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
               >
-Request Inspection
+                Request Inspection
               </button>
             </form>
           </div>
@@ -404,10 +404,10 @@ Kucho is one of Kathmandu Valley's most trusted names in pest control, protectin
             </div>
             <a
               href="#contact"
-              className="inline-block bg-amber-400 font-bold text-white text-sm px-8 py-3 rounded-full hover:bg-amber-500 transition-colors"
-            >
-              Contact Us
-            </a>
+                className="inline-block bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
+              >
+                Schedule a Free Inspection
+              </a>
           </div>
         </div>
       </section>
@@ -430,9 +430,9 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
               </p>
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 text-white font-semibold text-sm rounded-full px-8 py-3 w-max hover:bg-amber-500 transition-colors"
+                className="inline-block bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 w-max hover:bg-amber-400 hover:text-white transition-all duration-300"
               >
- Explore All Services
+                Explore All Services
               </a>
             </div>
           </div>
@@ -523,9 +523,9 @@ Don't let pests damage your property or disrupt your business. Trust Kathmandu V
               </p>
               <a
                 href="#contact"
-                className="inline-block bg-amber-400 text-white font-bold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors"
+                className="inline-block bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
               >
-Schedule a Free Inspection
+                View Our Plans
               </a>
             </div>
           </div>
