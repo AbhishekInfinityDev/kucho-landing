@@ -1,21 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import {
-  FaBars,
-  FaTimes,
-  FaArrowRight,
-  FaShieldAlt,
-  FaBolt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaClock,
-  FaStar,
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-} from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
+import { FaStar } from "react-icons/fa";
+import { MenuIcon } from "@/components/icons/menu";
+import { XIcon } from "@/components/icons/x";
+import { ArrowRightIcon } from "@/components/icons/arrow-right";
+import { ShieldCheckIcon } from "@/components/icons/shield-check";
+import { ZapIcon } from "@/components/icons/zap";
+import { PhoneIcon } from "@/components/icons/phone";
+import { MailCheckIcon } from "@/components/icons/mail-check";
+import { ClockIcon } from "@/components/icons/clock";
+import { FacebookIcon } from "@/components/icons/facebook";
+import { TwitterIcon } from "@/components/icons/twitter";
+import { LinkedinIcon } from "@/components/icons/linkedin";
+import { InstagramIcon } from "@/components/icons/instagram";
+
+type IconHandle = {
+  startAnimation: () => void;
+  stopAnimation: () => void;
+};
+
+function useGroupHover(count: number) {
+  const refs = useRef<(IconHandle | null)[]>(new Array(count).fill(null));
+  const setRef = (i: number) => (el: IconHandle | null) => {
+    refs.current[i] = el;
+  };
+  const onEnter = () => refs.current.forEach((r) => r?.startAnimation());
+  const onLeave = () => refs.current.forEach((r) => r?.stopAnimation());
+  return { setRef, onEnter, onLeave };
+}
 
 const testimonials = [
   {
@@ -91,6 +104,11 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [heroIdx, setHeroIdx] = useState(0);
+  const contactIcons = useGroupHover(3);
+  const aboutIcons = useGroupHover(2);
+  const serviceIcons = useGroupHover(services.length);
+  const socialIcons = useGroupHover(4);
+  const phoneIcons = useGroupHover(1);
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIdx((i) => (i + 1) % heroSlides.length);
@@ -149,7 +167,7 @@ export default function Home() {
                   className="lg:hidden text-white text-2xl p-2"
                   aria-label="Toggle menu"
                 >
-                  {menuOpen ? <FaTimes /> : <FaBars />}
+                  {menuOpen ? <XIcon size={24} /> : <MenuIcon size={24} />}
                 </button>
               </div>
             </nav>
@@ -249,24 +267,29 @@ Schedule Your Free Pest Inspection
             <div className="space-y-6">
               {[
                 {
-                  icon: FaPhoneAlt,
+                  icon: PhoneIcon,
                   title: "Phone",
                   value: "9802317551",
                 },
                 {
-                  icon: FaEnvelope,
+                  icon: MailCheckIcon,
                   title: "Email",
                   value: "info@kucho.co",
                 },
                 {
-                  icon: FaClock,
+                  icon: ClockIcon,
                   title: "Working Hours",
                   value: "Sun – Fri: 8:00 AM – 6:00 PM",
                 },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
+              ].map((item, i) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4"
+                  onMouseEnter={contactIcons.onEnter}
+                  onMouseLeave={contactIcons.onLeave}
+                >
                   <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
-                    <item.icon className="text-lg" />
+                    <item.icon size={20} ref={contactIcons.setRef(i)} />
                   </div>
                   <div>
                     <h3 className="font-semibold text-black">{item.title}</h3>
@@ -379,19 +402,24 @@ Kucho is one of Kathmandu Valley's most trusted names in pest control, protectin
 
               {[
                 {
-                  icon: FaShieldAlt,
+                  icon: ShieldCheckIcon,
                   title: "Residential Pest Control ",
                   desc: "Protect your family and property from unwanted pests with treatments designed for Nepali homes.",
                 },
                 {
-                  icon: FaBolt,
+                  icon: ZapIcon,
                   title: "Commercial Pest Management",
                   desc: "Reliable pest control for offices, restaurants, hotels and retail spaces across the valley.",
                 },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4">
+              ].map((item, i) => (
+                <div
+                  key={item.title}
+                  className="flex items-start gap-4"
+                  onMouseEnter={aboutIcons.onEnter}
+                  onMouseLeave={aboutIcons.onLeave}
+                >
                   <div className="w-12 h-12 bg-kucho-light rounded-lg flex items-center justify-center text-kucho-forest flex-shrink-0">
-                    <item.icon className="text-xl" />
+                    <item.icon size={24} ref={aboutIcons.setRef(i)} />
                   </div>
                   <div>
                     <h3 className="font-bold text-base text-black">
@@ -437,10 +465,12 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((svc) => (
+            {services.map((svc, i) => (
               <div
                 key={svc.title}
                 className="bg-white rounded-xl overflow-hidden border border-kucho-forest/10 hover:border-kucho-forest transition-all duration-300 group"
+                onMouseEnter={serviceIcons.onEnter}
+                onMouseLeave={serviceIcons.onLeave}
               >
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -460,7 +490,8 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
                     href="#contact"
                     className="font-semibold inline-flex items-center gap-2 text-sm hover:text-amber-400 transition-colors"
                   >
-                    {svc.title} Service <FaArrowRight className="text-xs" />
+                    {svc.title} Service{" "}
+                    <ArrowRightIcon size={16} ref={serviceIcons.setRef(i)} />
                   </a>
                 </div>
               </div>
@@ -550,20 +581,26 @@ Don't let pests damage your property or disrupt your business. Trust Kathmandu V
             </div>
             <div className="md:w-1/2 flex flex-col gap-4 md:items-end">
               <div className="flex gap-3">
-                {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map(
+                {[FacebookIcon, TwitterIcon, LinkedinIcon, InstagramIcon].map(
                   (Icon, i) => (
                     <a
                       key={i}
                       href="#"
                       className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-black text-sm hover:bg-amber-400 transition-colors"
+                      onMouseEnter={socialIcons.onEnter}
+                      onMouseLeave={socialIcons.onLeave}
                     >
-                      <Icon />
+                      <Icon size={16} ref={socialIcons.setRef(i)} />
                     </a>
                   ),
                 )}
               </div>
-              <p className="flex items-center gap-2 text-black text-sm">
-                <FaPhoneAlt className="text-black" /> 9802317551
+              <p
+                className="flex items-center gap-2 text-black text-sm"
+                onMouseEnter={phoneIcons.onEnter}
+                onMouseLeave={phoneIcons.onLeave}
+              >
+                <PhoneIcon size={16} className="text-black" ref={phoneIcons.setRef(0)} /> 9802317551
               </p>
             </div>
           </div>
