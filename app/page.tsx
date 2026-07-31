@@ -51,12 +51,12 @@ const testimonials = [
 const services = [
   {
     title: "Rodent Control",
-    desc: "Eliminate rats and mice before they damage property or contaminate food supplies.",
+    desc: "Eliminate rats and mice before they damage your property or contaminate food supplies.",
     img: "/services/rodent_control.png",
   },
   {
     title: "Termite Treatment",
-    desc: "Protect wooden structures, furniture, and buildings from costly termite damage.",
+    desc: "Protect wooden structures, furniture and buildings from costly termite damage.",
     img: "/services/termite.png",
   },
   {
@@ -66,7 +66,7 @@ const services = [
   },
   {
     title: "Cockroach Control",
-    desc: "Target infestations at the source and keep your property pest-free.",
+    desc: "Target infestations at the source and keep your property pest free.",
     img: "/services/cockroach.png",
   },
   {
@@ -185,7 +185,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center pt-[80px] py-20">
+      <section className="relative  flex items-center py-20">
         {heroSlides.map((src, i) => (
           <div
             key={src}
@@ -200,34 +200,30 @@ export default function Home() {
             />
           </div>
         ))}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">
           <div className="max-w-2xl text-white">
             <p className="text-sm font-semibold text-green-400 mb-3 tracking-widest uppercase">
-              Protect What Matters Most
+TRUSTED PEST CONTROL EXPERTS IN NEPAL
             </p>
-            <h1 className="font-extrabold text-5xl md:text-6xl lg:text-7xl mb-5 leading-tight">
+            <h1 className="font-extrabold text-5xl lg:text-6xl mb-5 leading-tight">
               {/* All Pest Solutions */}
-              Professional Pest Control
-              <br />
-              for Your Peace of Mind
+Professional Pest Control Services in Kathmandu Valley
             </h1>
             <p className="text-base md:text-lg max-w-lg mb-8 leading-relaxed text-gray-200">
-              Protect your home or business from termites, cockroaches, rodents,
-              bed bugs, mosquitoes, and more. Safe, effective pest control
-              solutions across Kathmandu, Lalitpur, and Bhaktapur.
+Protect your home or business from termites, cockroaches, rodents, bed bugs, mosquitoes and more. Safe, effective pest control solutions trusted across Kathmandu, Lalitpur and Bhaktapur.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
                 className="inline-block bg-amber-400 font-semibold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors duration-300 text-black hover:text-white"
               >
-                Schedule Inspection
+Schedule Free Inspection
               </a>
               <a
                 href="#services"
                 className="inline-block border-2 border-white font-semibold text-sm rounded-full px-8 py-3 hover:bg-white hover:text-gray-900 transition-colors duration-300"
               >
-                Explore Services
+Explore Our Services
               </a>
             </div>
           </div>
@@ -242,17 +238,13 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest mb-3">
-              Contact Us
+BOOK AN INSPECTION
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6">
-              Get Your Free Quote Today
+Schedule Your Free Pest Inspection
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
-              Fill out the form and our team will contact you shortly with a
-              customized pest control solution.
-              {/* Fill out the form and our team will get back to you within 24
-              hours. We&apos;ll assess your pest problem and provide a tailored
-              solution. */}
+ Fill out the form and our pest control experts will contact you shortly to schedule a free, no obligation inspection for your home or business
             </p>
             <div className="space-y-6">
               {[
@@ -286,7 +278,7 @@ export default function Home() {
           </div>
           <div className="bg-kucho-light rounded-xl p-8">
             <h3 className="text-xl font-bold text-black mb-6">
-              Book Your Service
+Book Your Inspection
             </h3>
             <form>
               {["Name", "Email", "Phone Number"].map((field) => (
@@ -321,7 +313,7 @@ export default function Home() {
                 type="submit"
                 className="w-full bg-amber-400 text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition-colors"
               >
-                Send Message
+Request Inspection
               </button>
             </form>
           </div>
@@ -335,57 +327,66 @@ export default function Home() {
       >
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center">
           <div className="lg:w-1/2 w-full">
-            <div className="flex flex-row gap-4">
+            <div className="grid grid-cols-2 gap-4">
                 {/* src="https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg" */}
               <img
                 src={"/images/kucho-1.jpeg"}
                 alt=""
-                className="rounded-xl object-cover w-1/2 h-[400px] lg:h-[500px]"
+                className="rounded-xl object-cover "
               />
-              <div className="flex flex-col w-1/2 gap-4">
-                <div className="bg-kucho-dark rounded-xl flex flex-col justify-center items-center p-6 h-1/2">
-                  <h2 className="text-5xl text-white font-extrabold text-kucho-forest leading-none">
-                    25+
+              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4">
+              {[
+                {
+                  number: "500+",
+                  title: "Properties Protected",
+                },
+                {
+                  number: "100%",
+                  title: "Safe & Proven Methods",
+                },
+                {
+                  number: "Trusted",
+                  title: "Across Kathmandu Valley",
+                },
+              ].map((item) => (
+                <div className="bg-kucho-dark rounded-xl flex flex-col justify-center items-center p-6">
+
+                  <h2 className="text-4xl text-white font-extrabold text-kucho-forest leading-none">
+                  {item.number}
                   </h2>
                   <p className="text-white font-semibold text-center mt-2 leading-tight">
-                    Years of
-                    <br />
-                    Experience
+                          {item.title}
                   </p>
                 </div>
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/976071dc-856e-4bdd-cea9-0d42c98ec036.jpg"
-                  alt=""
-                  className="rounded-xl object-cover w-full h-1/2"
-                />
+              ))}
               </div>
+              </div>
+
             </div>
           </div>
           <div className="lg:w-1/2 w-full">
             <p className="font-semibold text-xs uppercase tracking-widest mb-3">
-              About Kucho
+ABOUT KUCHO
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-              Kathmandu Valley's Trusted Pest Control Experts
-              {/* <br /> */}
+Kathmandu Valley's Trusted Pest Control Experts
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
-              For over 4 years, Kucho has protected homes and businesses across
-              Kathmandu Valley from termites, rodents, cockroaches, mosquitoes,
-              bed bugs, and other common pests using safe and effective
-              treatment solutions.
+Kucho is one of Kathmandu Valley's most trusted names in pest control, protecting homes and businesses from termites, rodents, cockroaches, bed bugs, mosquitoes and other common pests. Our trained technicians use safe and proven methods to deliver lasting results.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+
               {[
                 {
                   icon: FaShieldAlt,
-                  title: "Residential Pest Control",
-                  desc: "Protect your family and property from unwanted pests.",
+                  title: "Residential Pest Control ",
+                  desc: "Protect your family and property from unwanted pests with treatments designed for Nepali homes.",
                 },
                 {
                   icon: FaBolt,
                   title: "Commercial Pest Management",
-                  desc: "Customized solutions for offices, hotels, restaurants, and warehouses..",
+                  desc: "Reliable pest control for offices, restaurants, hotels and retail spaces across the valley.",
                 },
               ].map((item) => (
                 <div key={item.title} className="flex items-start gap-4">
@@ -417,23 +418,21 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
             <div className="lg:col-span-5">
               <p className="text-sm font-semibold uppercase tracking-widest mb-3">
-                Our Services
+OUR SERVICES
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                Solutions For Every Pest
+Solutions For Every Pest
               </h2>
             </div>
             <div className="lg:col-span-7 flex flex-col justify-center">
               <p className="text-gray-500 mb-6">
-                From homes and apartments to restaurants and commercial
-                facilities, we deliver reliable pest control solutions tailored
-                to your needs.
+From homes and apartments to restaurants and commercial facilities, we deliver reliable pest control solutions tailored to properties across Kathmandu Valley.
               </p>
               <a
                 href="#contact"
                 className="inline-block bg-amber-400 text-white font-semibold text-sm rounded-full px-8 py-3 w-max hover:bg-amber-500 transition-colors"
               >
-                Explore All Services
+ Explore All Services
               </a>
             </div>
           </div>
@@ -512,23 +511,21 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5">
               <p className="text-sm font-semibold text-kucho-forest uppercase tracking-widest mb-3">
-                Get Started Today
+GET STARTED TODAY
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
-                Protect Your Property with Kucho
+Protect Your Property with Kucho
               </h2>
             </div>
             <div className="lg:col-span-7">
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Don&apos;t let pests damage your property or disrupt your
-                business. Trust Kathmandu Valley's pest control specialists for
-                effective, long-lasting protection.
+Don't let pests damage your property or disrupt your business. Trust Kathmandu Valley's pest control specialists for effective, long lasting protection.
               </p>
               <a
                 href="#contact"
                 className="inline-block bg-amber-400 text-white font-bold text-sm rounded-full px-8 py-3 hover:bg-amber-500 transition-colors"
               >
-                Schedule a Free Inspection
+Schedule a Free Inspection
               </a>
             </div>
           </div>
