@@ -230,13 +230,13 @@ Professional Pest Control Services in Kathmandu Valley
             <p className="text-base md:text-lg max-w-lg mb-8 leading-relaxed text-gray-200">
 Protect your home or business from termites, cockroaches, rodents, bed bugs, mosquitoes and more. Safe, effective pest control solutions trusted across Kathmandu, Lalitpur and Bhaktapur.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="inline-block bg-amber-300 text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
-              >
-                View Our Plans
-              </a>
+            <div className="flex items-center flex-wrap gap-4">
+                <a
+                  href="#contact"
+                  className="hidden sm:inline-block bg-amber-300  text-black font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-amber-400 hover:text-white transition-all duration-300"
+                >
+                  View Our Plans
+                </a>
               <a
                 href="#services"
                 className="inline-block border-2 border-white font-semibold text-sm rounded-full px-8 py-3 hover:bg-white hover:text-gray-900 transition-colors duration-300"
@@ -299,14 +299,14 @@ Schedule Your Free Pest Inspection
               ))}
             </div>
           </div>
-          <div className="bg-kucho-500 rounded-xl p-8">
-            <h3 className="text-xl font-bold text-black mb-6">
+          <div className="bg-kucho-600 rounded-xl p-8">
+            <h3 className="text-xl font-bold text-white mb-6">
 Book Your Inspection
             </h3>
             <form>
               {["Name", "Email", "Phone Number"].map((field) => (
                 <div key={field} className="mb-4 ">
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">
+                  <label className="text-sm font-medium text-white mb-1 block">
                     {field}
                   </label>
                   <input
@@ -323,7 +323,7 @@ Book Your Inspection
                 </div>
               ))}
               <div className="mb-4">
-                <label className="text-sm font-medium text-gray-700 mb-1 block">
+                <label className="text-sm font-medium text-white mb-1 block">
                   Message
                 </label>
                 <textarea
@@ -501,7 +501,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="bg-kucho-500 py-20 md:py-28">
+      <section id="testimonials" className="bg-kucho-600 py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-14">
             <p className="text-sm font-semibold text-white uppercase tracking-widest mb-2">
@@ -517,7 +517,7 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
                 key={t.author}
                 className="bg-white rounded-xl p-8 md:p-10 text-center"
               >
-                <div className="text-kucho-500 text-2xl mb-4 flex justify-center gap-1">
+                <div className="text-amber-300 text-2xl mb-4 flex justify-center gap-1">
                   {[...Array(t.stars || 5)].map((_, i) => (
                     <FaStar key={i} />
                   ))}
