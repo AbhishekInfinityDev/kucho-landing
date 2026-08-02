@@ -14,6 +14,8 @@ import { FacebookIcon } from "@/components/icons/facebook";
 import { TwitterIcon } from "@/components/icons/twitter";
 import { LinkedinIcon } from "@/components/icons/linkedin";
 import { InstagramIcon } from "@/components/icons/instagram";
+import { ChevronLeftIcon } from "@/components/icons/chevron-left";
+import { ChevronRightIcon } from "@/components/icons/chevron-right";
 
 type IconHandle = {
   startAnimation: () => void;
@@ -100,10 +102,22 @@ const heroSlides = [
   "/images/hero-image3.jpeg",
 ];
 
+const videoTestimonials = [
+  {
+    src: "/videos-testimonials/v1.webm",
+    title: "Deepshikha Rana",
+    subtitle: "Google Review",
+  },
+];
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [heroIdx, setHeroIdx] = useState(0);
+  const [videoIdx, setVideoIdx] = useState(0);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoEnded, setVideoEnded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const contactIcons = useGroupHover(3);
   const aboutIcons = useGroupHover(2);
   const serviceIcons = useGroupHover(services.length);
@@ -121,6 +135,27 @@ export default function Home() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const goToVideo = (i: number) => {
+    setVideoIdx(
+      (i + videoTestimonials.length) % videoTestimonials.length
+    );
+    setVideoPlaying(false);
+    setVideoEnded(false);
+  };
+
+  const toggleVideo = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setVideoPlaying(true);
+      setVideoEnded(false);
+    } else {
+      v.pause();
+      setVideoPlaying(false);
+    }
+  };
 
   return (
     <div className="bg-white text-gray-800 font-sans overflow-x-hidden">
@@ -501,37 +536,123 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="bg-kucho-600 py-20 md:py-28">
+      {/* <section id="testimonials" className="bg-kucho-600 py-20 md:py-28"> */}
+      {/*   <div className="max-w-5xl mx-auto px-6 sm:px-8"> */}
+      {/*     <div className="text-center mb-14"> */}
+      {/*       <p className="text-sm font-semibold text-white uppercase tracking-widest mb-2"> */}
+      {/*         Testimonials */}
+      {/*       </p> */}
+      {/*       <h2 className="font-extrabold text-4xl md:text-5xl text-white mb-4"> */}
+      {/*         What Our Clients Say */}
+      {/*       </h2> */}
+      {/*     </div> */}
+      {/*     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
+      {/*       {testimonials.map((t) => ( */}
+      {/*         <div */}
+      {/*           key={t.author} */}
+      {/*           className="bg-white rounded-xl p-8 md:p-10 text-center" */}
+      {/*         > */}
+      {/*           <div className="text-amber-300 text-2xl mb-4 flex justify-center gap-1"> */}
+      {/*             {[...Array(t.stars || 5)].map((_, i) => ( */}
+      {/*               <FaStar key={i} /> */}
+      {/*             ))} */}
+      {/*           </div> */}
+      {/*           <p className="text-gray-600 leading-relaxed mb-6 italic"> */}
+      {/*             &ldquo;{t.text}&rdquo; */}
+      {/*           </p> */}
+      {/*           <div className="w-16 h-16 rounded-full bg-kucho-50 mx-auto mb-3 flex items-center justify-center text-kucho-500 text-2xl font-bold"> */}
+      {/*             {t.initials} */}
+      {/*           </div> */}
+      {/*           <h4 className="font-bold text-black">{t.author}</h4> */}
+      {/*           <p className="text-sm text-gray-500">{t.title}</p> */}
+      {/*         </div> */}
+      {/*       ))} */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/* </section> */}
+
+      {/* Video Testimonials */}
+      <section className="bg-kucho-700 py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-14">
-            <p className="text-sm font-semibold text-white uppercase tracking-widest mb-2">
-              Testimonials
+            <p className="text-sm font-semibold text-kucho-200 uppercase tracking-widest mb-2">
+              Video Testimonials
             </p>
             <h2 className="font-extrabold text-4xl md:text-5xl text-white mb-4">
-              What Our Clients Say
+              Watch Our Clients Share Their Experience
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div
-                key={t.author}
-                className="bg-white rounded-xl p-8 md:p-10 text-center"
-              >
-                <div className="text-amber-300 text-2xl mb-4 flex justify-center gap-1">
-                  {[...Array(t.stars || 5)].map((_, i) => (
-                    <FaStar key={i} />
-                  ))}
-                </div>
-                <p className="text-gray-600 leading-relaxed mb-6 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <div className="w-16 h-16 rounded-full bg-kucho-50 mx-auto mb-3 flex items-center justify-center text-kucho-500 text-2xl font-bold">
-                  {t.initials}
-                </div>
-                <h4 className="font-bold text-black">{t.author}</h4>
-                <p className="text-sm text-gray-500">{t.title}</p>
-              </div>
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden bg-kucho-950/60 shadow-2xl">
+              <video
+                key={videoIdx}
+                ref={videoRef}
+                src={videoTestimonials[videoIdx].src}
+                title={videoTestimonials[videoIdx].title}
+                className="w-full aspect-video object-contain bg-black"
+                playsInline
+                preload="metadata"
+                controls={videoPlaying}
+                aria-label={`Video testimonial from ${videoTestimonials[videoIdx].title}`}
+                onEnded={() => {
+                  setVideoPlaying(false);
+                  setVideoEnded(true);
+                }}
+                onClick={toggleVideo}
+              />
+              {!videoPlaying && (
+                <button
+                  onClick={toggleVideo}
+                  className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-amber-300 text-black flex items-center justify-center hover:bg-amber-400 hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl"
+                  aria-label={`Play video testimonial from ${videoTestimonials[videoIdx].title}`}
+                >
+                  {videoEnded ? (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="m1 4 8 8-8 8" />
+                      <path d="m11 4 8 8-8 8" />
+                    </svg>
+                  ) : (
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  )}
+                </button>
+              )}
+            </div>
+            <button
+              onClick={() => goToVideo(videoIdx - 1)}
+              className="absolute left-0 sm:-left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white text-kucho-800 flex items-center justify-center shadow-lg hover:bg-kucho-200 transition-colors"
+              aria-label="Previous video testimonial"
+            >
+              <ChevronLeftIcon size={22} />
+            </button>
+            <button
+              onClick={() => goToVideo(videoIdx + 1)}
+              className="absolute right-0 sm:-right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white text-kucho-800 flex items-center justify-center shadow-lg hover:bg-kucho-200 transition-colors"
+              aria-label="Next video testimonial"
+            >
+              <ChevronRightIcon size={22} />
+            </button>
+          </div>
+          <div className="flex justify-center gap-2 mt-8">
+            {videoTestimonials.map((v, i) => (
+              <button
+                key={v.src}
+                onClick={() => goToVideo(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                  i === videoIdx ? "bg-amber-300" : "bg-white/40 hover:bg-white/70"
+                }`}
+                aria-label={`Go to video testimonial ${i + 1}`}
+              />
             ))}
+          </div>
+          <div className="text-center mt-4">
+            <h4 className="font-bold text-white">
+              {videoTestimonials[videoIdx].title}
+            </h4>
+            <p className="text-sm text-kucho-200">
+              {videoTestimonials[videoIdx].subtitle}
+            </p>
           </div>
         </div>
       </section>
