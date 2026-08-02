@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { FaStar } from "react-icons/fa";
+import Image from "next/image";
 import { MenuIcon } from "@/components/icons/menu";
 import { XIcon } from "@/components/icons/x";
 import { ArrowRightIcon } from "@/components/icons/arrow-right";
@@ -31,37 +31,6 @@ function useGroupHover(count: number) {
   const onLeave = () => refs.current.forEach((r) => r?.stopAnimation());
   return { setRef, onEnter, onLeave };
 }
-
-const testimonials = [
-  {
-    text: "Professional cleaning end result was more that expected really recommend it......",
-    author: "deepshikha rana",
-    title: "Google Review",
-    initials: "DR",
-    stars: 5,
-  },
-  {
-    text: "Very responsive and quick service. Hope u will keep your services all the time to all clients. We will definitely use your service in future if we require any.",
-    author: "Pushpa Shrestha",
-    title: "Google Review",
-    initials: "PS",
-    stars: 4,
-  },
-  {
-    text: "Kuch team performed a deep clean of my living room. Very satisfied with the team they sent and the cleaning work was very satisfactory. Specially recommended for sofa cleaning",
-    author: "nikita motani",
-    title: "Google Review",
-    initials: "NM",
-    stars: 4,
-  },
-  {
-    text: "Good service. Thank you",
-    author: "Kami Sherpa",
-    title: "Google Review",
-    initials: "KS",
-    stars: 5,
-  },
-];
 
 const services = [
   {
@@ -106,6 +75,21 @@ const videoTestimonials = [
   {
     src: "/videos-testimonials/v1.webm",
     title: "Deepshikha Rana",
+    subtitle: "Google Review",
+  },
+  {
+    src: "/videos-testimonials/v2.mp4",
+    title: "Kucho Client",
+    subtitle: "Google Review",
+  },
+  {
+    src: "/videos-testimonials/v3.mp4",
+    title: "Kucho Client",
+    subtitle: "Google Review",
+  },
+  {
+    src: "/videos-testimonials/v4.mp4",
+    title: "Kucho Client",
     subtitle: "Google Review",
   },
 ];
@@ -171,7 +155,13 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <nav className="flex items-center justify-between h-[80px] py-10 text-white text-sm font-semibold">
               <a href="#" className="flex items-center gap-2 select-none">
-                <img src="/logo.png" alt="Kucho" className="h-20 w-auto" />
+                <Image
+                  src="/logo.png"
+                  alt="Kucho"
+                  width={140}
+                  height={98}
+                  className="h-20 w-auto"
+                />
               </a>
               {/* <div className="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide">
                 {[
@@ -246,10 +236,12 @@ export default function Home() {
               i === heroIdx ? "opacity-100" : "opacity-0"
             }`}
           >
-            <img
+            <Image
               src={src}
               alt=""
-              className="w-full h-full object-cover brightness-[0.35]"
+              fill
+              sizes="100vw"
+              className="object-cover brightness-[0.35]"
             />
           </div>
         ))}
@@ -387,11 +379,15 @@ Book Your Inspection
           <div className="lg:w-1/2 w-full">
             <div className="grid grid-cols-2 gap-4">
                 {/* src="https://storage.googleapis.com/a1aa/image/016deda5-3daa-4ded-f491-27caad55848d.jpg" */}
-              <img
-                src={"/images/kucho-1.jpeg"}
-                alt=""
-                className="rounded-xl object-cover "
-              />
+              <div className="relative aspect-[3/4] rounded-xl overflow-hidden">
+                <Image
+                  src="/images/kucho-1.jpeg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-4">
               {[
@@ -408,7 +404,7 @@ Book Your Inspection
                   title: "Across Kathmandu Valley",
                 },
               ].map((item) => (
-                <div className="bg-kucho-800 rounded-xl flex flex-col justify-center items-center p-6">
+                <div key={item.title} className="bg-kucho-800 rounded-xl flex flex-col justify-center items-center p-6">
 
                   <h2 className="text-4xl text-white font-extrabold text-kucho-300 leading-none">
                   {item.number}
@@ -428,10 +424,10 @@ Book Your Inspection
 ABOUT KUCHO
             </p>
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-5">
-Kathmandu Valley's Trusted Pest Control Experts
+Kathmandu Valley&apos;s Trusted Pest Control Experts
             </h2>
             <p className="text-gray-500 mb-8 leading-relaxed">
-Kucho is one of Kathmandu Valley's most trusted names in pest control, protecting homes and businesses from termites, rodents, cockroaches, bed bugs, mosquitoes and other common pests. Our trained technicians use safe and proven methods to deliver lasting results.
+Kucho is one of Kathmandu Valley&apos;s most trusted names in pest control, protecting homes and businesses from termites, rodents, cockroaches, bed bugs, mosquitoes and other common pests. Our trained technicians use safe and proven methods to deliver lasting results.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
 
@@ -508,10 +504,12 @@ From homes and apartments to restaurants and commercial facilities, we deliver r
                 onMouseLeave={serviceIcons.onLeave}
               >
                 <div className="relative h-56 overflow-hidden">
-                  <img
+                  <Image
                     src={svc.img}
                     alt=""
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
@@ -671,7 +669,7 @@ Protect Your Property with Kucho
             </div>
             <div className="lg:col-span-7">
               <p className="text-gray-300 mb-6 leading-relaxed">
-Don't let pests damage your property or disrupt your business. Trust Kathmandu Valley's pest control specialists for effective, long lasting protection.
+Don&apos;t let pests damage your property or disrupt your business. Trust Kathmandu Valley&apos;s pest control specialists for effective, long lasting protection.
               </p>
               <a
                 href="#contact"
@@ -693,7 +691,13 @@ Don't let pests damage your property or disrupt your business. Trust Kathmandu V
                 href="#"
                 className="text-3xl font-extrabold text-black flex items-center gap-1 mb-6"
               >
-                <img src="/logo.png" alt="Kucho" className="h-20 w-auto" />
+                <Image
+                  src="/logo.png"
+                  alt="Kucho"
+                  width={140}
+                  height={98}
+                  className="h-20 w-auto"
+                />
               </a>
               <p className="text-black text-sm leading-relaxed max-w-sm">
                 Feel free to contact us during business hours. Our team is ready
