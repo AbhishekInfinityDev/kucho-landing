@@ -36,9 +36,9 @@ export const CONTACT = {
   description:
     "Fill out the form and our pest control experts will contact you shortly to schedule a free, no obligation inspection for your home or business",
   details: [
-    { icon: PhoneIcon, title: "Phone", value: "9802317551" },
-    { icon: PhoneIcon, title: "Landline", value: "014621398" },
-    { icon: MailCheckIcon, title: "Email", value: "info@kucho.co" },
+    { icon: PhoneIcon, title: "Phone", value: "9802317551", href: "tel:9802317551" },
+    { icon: PhoneIcon, title: "Landline", value: "014621398", href: "tel:014621398" },
+    { icon: MailCheckIcon, title: "Email", value: "info@kucho.co", href: "mailto:info@kucho.co" },
     {
       icon: ClockIcon,
       title: "Working Hours",

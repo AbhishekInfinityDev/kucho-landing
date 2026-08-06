@@ -35,7 +35,16 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-black">{item.title}</h3>
-                  <p className="text-gray-500 text-sm">{item.value}</p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-gray-500 text-sm hover:text-kucho-500 transition-colors"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-gray-500 text-sm">{item.value}</p>
+                  )}
                 </div>
               </div>
             ))}
