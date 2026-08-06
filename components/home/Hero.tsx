@@ -34,9 +34,6 @@ export function Hero() {
       ))}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 w-full">
         <div className="max-w-2xl text-white">
-          <p className="text-sm font-semibold text-kucho-300 mb-3 tracking-widest uppercase">
-            {HERO.badge}
-          </p>
           <h1 className="font-extrabold text-5xl lg:text-6xl mb-5 leading-tight">
             {HERO.title}
           </h1>

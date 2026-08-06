@@ -4,9 +4,9 @@ import { ClockIcon } from "@/components/icons/clock";
 import { ShieldCheckIcon } from "@/components/icons/shield-check";
 import { ZapIcon } from "@/components/icons/zap";
 import { FacebookIcon } from "@/components/icons/facebook";
-import { TwitterIcon } from "@/components/icons/twitter";
-import { LinkedinIcon } from "@/components/icons/linkedin";
 import { InstagramIcon } from "@/components/icons/instagram";
+import { YoutubeIcon } from "@/components/icons/youtube";
+import { TiktokIcon } from "@/components/icons/tiktok";
 
 export const NAV_LINKS = [
   "Home",
@@ -23,7 +23,6 @@ export const HERO_SLIDES = [
 ];
 
 export const HERO = {
-  badge: "TRUSTED PEST CONTROL EXPERTS IN NEPAL",
   title: "Professional Pest Control Services in Kathmandu Valley",
   description:
     "Protect your home or business from termites, cockroaches, rodents, bed bugs, mosquitoes and more. Safe, effective pest control solutions trusted across Kathmandu, Lalitpur and Bhaktapur.",
@@ -38,6 +37,7 @@ export const CONTACT = {
     "Fill out the form and our pest control experts will contact you shortly to schedule a free, no obligation inspection for your home or business",
   details: [
     { icon: PhoneIcon, title: "Phone", value: "9802317551" },
+    { icon: PhoneIcon, title: "Landline", value: "014621398" },
     { icon: MailCheckIcon, title: "Email", value: "info@kucho.co" },
     {
       icon: ClockIcon,
@@ -140,7 +140,25 @@ export const FOOTER = {
   description:
     "Feel free to contact us during business hours. Our team is ready to help protect your home or business from pests.",
   phone: "9802317551",
-  socials: [FacebookIcon, TwitterIcon, LinkedinIcon, InstagramIcon],
+  landline: "014621398",
+  socials: [
+    {
+      icon: FacebookIcon,
+      href: "https://www.facebook.com/kucho.cleaning.services",
+    },
+    {
+      icon: InstagramIcon,
+      href: "https://www.instagram.com/kucho.cleaning.services/",
+    },
+    {
+      icon: YoutubeIcon,
+      href: "https://www.youtube.com/@kucho.cleaning.services",
+    },
+    {
+      icon: TiktokIcon,
+      href: "https://www.tiktok.com/@kucho.cleaning.services?_r=1&_t=ZS-98eXB2fzKw4",
+    },
+  ],
   copyright: "\u00a92026 Kucho. All rights reserved.",
   credit: "Designed by Infinity Digital Agency",
 };

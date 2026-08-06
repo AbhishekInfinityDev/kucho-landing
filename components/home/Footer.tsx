@@ -7,7 +7,7 @@ import { PhoneIcon } from "@/components/icons/phone";
 
 export function Footer() {
   const socialIcons = useGroupHover(FOOTER.socials.length);
-  const phoneIcons = useGroupHover(1);
+  const phoneIcons = useGroupHover(2);
 
   return (
     <footer className="bg-white pt-16 pb-6">
@@ -32,10 +32,12 @@ export function Footer() {
           </div>
           <div className="md:w-1/2 flex flex-col gap-4 md:items-end">
             <div className="flex gap-3">
-              {FOOTER.socials.map((Icon, i) => (
+              {FOOTER.socials.map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-kucho-500 flex items-center justify-center text-black text-sm hover:bg-kucho-400 transition-colors"
                   onMouseEnter={socialIcons.onEnter}
                   onMouseLeave={socialIcons.onLeave}
@@ -45,12 +47,33 @@ export function Footer() {
               ))}
             </div>
             <div
-              className="flex items-center gap-2 text-black text-sm"
+              className="flex flex-col gap-2 text-black text-sm"
               onMouseEnter={phoneIcons.onEnter}
               onMouseLeave={phoneIcons.onLeave}
             >
-              <PhoneIcon size={16} className="text-black" ref={phoneIcons.setRef(0)} />
-              {FOOTER.phone}
+              <div className="flex items-center gap-2">
+                <PhoneIcon
+                  size={16}
+                  className="text-black"
+                  ref={phoneIcons.setRef(0)}
+                />
+                <a href={`tel:${FOOTER.phone}`} className="hover:opacity-70 transition-opacity">
+                  {FOOTER.phone}
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <PhoneIcon
+                  size={16}
+                  className="text-black"
+                  ref={phoneIcons.setRef(1)}
+                />
+                <a
+                  href={`tel:${FOOTER.landline}`}
+                  className="hover:opacity-70 transition-opacity"
+                >
+                  {FOOTER.landline}
+                </a>
+              </div>
             </div>
           </div>
         </div>
